@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_131342) do
+ActiveRecord::Schema.define(version: 2021_11_22_135010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "artist_name"
+    t.string "address"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_artists_on_user_id"
+  end
+
+  create_table "artworks", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.string "type"
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_artworks_on_artist_id"
+  end
+
+  create_table "gallerists", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.float "rating"
+    t.string "address"
+    t.string "description"
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_gallerists_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.date "date"
+    t.bigint "artwork_id", null: false
+    t.bigint "gallerist_id", null: false
+    t.boolean "reciprocal_like", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_likes_on_artwork_id"
+    t.index ["gallerist_id"], name: "index_likes_on_gallerist_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +73,9 @@ ActiveRecord::Schema.define(version: 2021_11_22_131342) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "artists", "users"
+  add_foreign_key "artworks", "artists"
+  add_foreign_key "gallerists", "users"
+  add_foreign_key "likes", "artworks"
+  add_foreign_key "likes", "gallerists"
 end
