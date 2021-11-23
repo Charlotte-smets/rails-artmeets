@@ -3,14 +3,11 @@
 <p><%= @artwork.date%></p>
 <p><%= @artwork.style %></p>
 
-
 <div class="container">
-<button type="button" class="btn-dislike btn-outline-primary">Dislike</button>
-<%= simple_form_for [ @gallerist, @favorite ] do |f| %>
-  <%= f.submit "Love", class: "btn btn-primary" %>
-  <%= hidden_field :favorite, :artwork_id, value: @artwork.id %>
-
-<% end %>
-<button type="button" class="btn-decide-later btn-outline-primary">Decide later</button>
-
+  <button type="button" class="btn-dislike btn-outline-primary">Dislike</button>
+  <%= simple_form_for [ @gallerist, @favorite ] do |f| %>
+    <%= f.submit "Love", class: "btn btn-primary" %>
+    <%= hidden_field :favorite, :artwork_id, value: @artwork.id %>
+  <% end %>
+  <button type="button" class="btn-decide-later btn-outline-primary">Decide later</button>
 </div>
