@@ -1,0 +1,7 @@
+<h1>#New</h1>
+<%= simple_form_for([@artist, @artwork]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :style %>
+  <%= f.submit "Add an Artwork" %>
+<% end %>

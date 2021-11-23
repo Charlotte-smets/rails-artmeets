@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_135010) do
+ActiveRecord::Schema.define(version: 2021_11_23_143443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_135010) do
   create_table "artworks", force: :cascade do |t|
     t.string "title"
     t.date "date"
-    t.string "type"
+    t.string "style"
     t.bigint "artist_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,15 +50,13 @@ ActiveRecord::Schema.define(version: 2021_11_22_135010) do
     t.index ["user_id"], name: "index_gallerists_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.date "date"
-    t.bigint "artwork_id", null: false
+  create_table "matches", force: :cascade do |t|
+    t.bigint "artist_id", null: false
     t.bigint "gallerist_id", null: false
-    t.boolean "reciprocal_like", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["artwork_id"], name: "index_likes_on_artwork_id"
-    t.index ["gallerist_id"], name: "index_likes_on_gallerist_id"
+    t.index ["artist_id"], name: "index_matches_on_artist_id"
+    t.index ["gallerist_id"], name: "index_matches_on_gallerist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,6 +74,6 @@ ActiveRecord::Schema.define(version: 2021_11_22_135010) do
   add_foreign_key "artists", "users"
   add_foreign_key "artworks", "artists"
   add_foreign_key "gallerists", "users"
-  add_foreign_key "likes", "artworks"
-  add_foreign_key "likes", "gallerists"
+  add_foreign_key "matches", "artists"
+  add_foreign_key "matches", "gallerists"
 end

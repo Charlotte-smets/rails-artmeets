@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @artists = Artist.where(user_id: current_user.id)
+    @artworks = Artwork.where(user_id: current_user.id)
+  end
 end
