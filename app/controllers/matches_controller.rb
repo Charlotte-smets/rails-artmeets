@@ -1,8 +1,7 @@
 class MatchesController < ApplicationController
 
-  def match
+  def create
     artist.favorited?(gallerist) && gallerist.favorited?(artist)
-
   end
 
 
