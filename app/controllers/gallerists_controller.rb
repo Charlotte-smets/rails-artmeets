@@ -23,6 +23,6 @@ class GalleristsController < ApplicationController
  private
 
   def gallerist_params
-    params.require(:gallerist).permit(:first_name, :last_name, :rating, :address, :description, :name)
+    params.require(:gallerist).permit(:first_name, :last_name, :rating, :address, :description, :name, photos: [])
   end
 end
