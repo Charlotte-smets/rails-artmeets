@@ -1,0 +1,8 @@
+<h1>#Index</h1>
+<div>
+  <% @artworks.each do |artwork| %>
+    <p><%= artwork.title %></p>
+    <p><%= artwork.date %></p>
+    <p><%= artwork.type %></p>
+  <% end %>
+</div>
