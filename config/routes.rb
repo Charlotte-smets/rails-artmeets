@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :artists, only: %i[index show new create] do
     resources :artworks, only: %i[index new create destroy]
   end
+  resources :gallerists do
+    resources :likes, only: %i[new create]
+  end
   get 'dashboard', to: 'pages#dashboard'
 end
