@@ -1,8 +1,11 @@
 <h1>#Dashboard</h1>
-<div>
-  <% @artworks.each do |artwork| %>
-    <p><%= artwork.title %></p>
-    <p><%= artwork.date%></p>
-    <p><%= artwork.style %></p>
-  <% end %>
-</div>
+<% @artworks.each do |artwork| %>
+  <div class="card-artwork-dashboard">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-artwork-dashboard-infos">
+      <h2><%= artwork.title %></h2>
+      <p><%= artwork.date%></p>
+      <p><%= artwork.style %></p>
+    </div>
+  </div>
+<% end %>

@@ -3,4 +3,6 @@ class Gallerist < ApplicationRecord
   has_many :matches
   acts_as_favoritable
   acts_as_favoritor
+
+  has_many_attached :photos
 end

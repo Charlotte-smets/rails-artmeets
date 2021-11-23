@@ -1,17 +1,12 @@
 <h1>Create a new gallery</h1>
 
-<%= form_for(@gallerist) do |f| %>
-  <%= f.label :gallery_name %>
-  <%= f.text_field :name %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+<%= simple_form_for(@gallerist) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :rating %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
