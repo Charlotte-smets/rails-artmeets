@@ -1,4 +1,8 @@
 <h1>#Dashboard</h1>
-<p><%= @artwork.title %></p>
-<p><%= @artwork.date %></p>
-<p><%= @artwork.type %></p>
+<div>
+  <% @artworks.each do |artwork| %>
+    <p><%= artwork.title %></p>
+    <p><%= artwork.date%></p>
+    <p><%= artwork.style %></p>
+  <% end %>
+</div>

@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @artists = Artist.where(user_id: current_user.id)
-    @artworks = Artwork.where(user_id: current_user.id)
+    @artists = current_user.artists
+    @artworks = current_user.artworks
   end
 end
