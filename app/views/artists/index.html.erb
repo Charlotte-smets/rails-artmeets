@@ -1,9 +1,10 @@
 <h1>#Index</h1>
-<div>
-  <% @artists.each do |artist| %>
+<% @artists.each do |artist| %>
+  <div class="border-bottom">
     <p><%= artist.first_name %></p>
     <p><%= artist.last_name %></p>
     <p><%= artist.artist_name %></p>
     <p><%= artist.description %></p>
-  <% end %>
-</div>
+    <%= link_to "See details", artist_path(artist) %>
+  </div>
+<% end %>
