@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
   def index
     @artworks = Artwork.all
+    @artist = Artist.find(params[:artist_id])
   end
 
   def new
@@ -9,7 +10,7 @@ class ArtworksController < ApplicationController
   end
 
   def show
-    #  @artist = Artist.find(params[:artist_id])
+    # @artist = Artist.find(params[:artist_id])
     @gallerist = current_user.gallerists.first
     @favorite = Favorite.new
     @artwork = Artwork.find(params[:id])
@@ -31,6 +32,13 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
     redirect_to artist_path(@artwork.artist)
+  end
+
+  def dislike
+    artworks_all = Artwork.all
+    artwork = Artwork.find(params[:id])
+    artworks = artworks_all.reject { |element| element.id == artwork.id }
+    redirect_to artwork_path(artworks.sample)
   end
 
   private
