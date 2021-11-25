@@ -1,15 +1,27 @@
-<h1>#Index</h1>
+<div class="container-fluid" id="artworks-index">
+<div class="d-flex justify-content-between align-bottom page-title">
+<h1>Discover <br>new Talents</h1>
+<img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+</div>
+<hr>
+
 <% @artworks.each do |artwork| %>
-  <div class="container border-bottom">
-    <h3><%= artwork.title %></h3>
-    <p><%= artwork.date %></p>
-    <p>Id: <%= artwork.id %></p>
-    <p><%= artwork.style %></p>
-    <p><%= artwork.artist.first_name %> | id: <%= artwork.artist.id %> </p>
-    <%= link_to "See details", artwork_path(artwork) %>
-    <%= link_to 'Like', like_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
-    <%= link_to 'Dislike', dislike_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
+  <div>
+    <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844845/balloon-dog-limited-edition-jeff-koons-red-lifestyle-collectible-jeff-koons-smets-919035_600x_kfpwrd.jpg" alt="Girl in a jacket" width="300">
+    <%# <%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="artwork-info">
+        <h3><%= artwork.title %> </h3>
+        <h4><%=  artwork.artist.first_name %></h3>
+        <br>
+        <p><%= artwork.date %></p>
+        <p><%= artwork.style %></p>
+        <p><%= artwork.artist.first_name %> | id: <%= artwork.artist.id %> </p>
+        <%= link_to "See details", artwork_path(artwork) %>
+        <%= link_to 'Like', like_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
+        <%= link_to 'Dislike', dislike_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
+      <div>
   </div>
 <% end %>
 
-<%= console %>
+<div>
+

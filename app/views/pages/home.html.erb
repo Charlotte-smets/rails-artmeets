@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid" id="home-container">
+  <div class="welcome" >
+    <h1>Welcome back Clement!</h1>
+  <h4>Discover new talents everyday</p>
+    <%= link_to artists_path do %>
+      <button class="button-welcome">Start now</button>
+    <% end %>
+  </div>
+</div>

@@ -1,2 +1,93 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h1 {
+font-family: 'Ubuntu', sans-serif;
+font-weight: 600;
+font-size: 30px;
+}
+
+#artworks-index{
+color: rgb(0, 0, 0);
+background: rgb(255, 255, 255);
+height: auto;
+text-align: center;
+}
+
+
+// ENTETE PAGE - ARTWORK
+.page-title {
+  padding-top: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: -20px;
+}
+
+.page-title h1{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+hr {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.arrow{
+  width: 25px;
+  height: 100%;
+  object-fit: cover;
+  padding-top: 12px;
+}
+
+
+// ARTWORK INFO
+
+.artwork-img {
+  margin-top: 30px;
+  border-radius: 2em;
+  border-color: black;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.artwork-info{
+  margin-top: 20px;
+  margin-left: 40px;
+  text-align: left;
+  line-height: 0.2em;
+}
+
+.artwork-info h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: rgb(68, 68, 68);
+}
+
+
+.artwork-info h4 {
+  margin-top: -8px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+
+.artwork-info p {
+  margin-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+ }
+
+ .artwork-info a {
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: lowercase;
+  text-decoration: underline;
+ }
