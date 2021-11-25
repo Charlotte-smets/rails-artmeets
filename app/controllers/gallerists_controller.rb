@@ -1,18 +1,22 @@
 class GalleristsController < ApplicationController
+
   def index
-    @gallerists = Gallerist.all
+    @gallerists = policy_scope(Gallerist)
   end
 
   def show
     @gallerist = Gallerist.find(params[:id])
+    authorize @gallerist
   end
 
   def new
     @gallerist = Gallerist.new
+    authorize @gallerist
   end
 
   def create
     @gallerist = Gallerist.new(gallerist_params)
+    authorize @gallerist
     @gallerist.user = current_user
     @gallerist.save
     redirect_to gallerist_path(@gallerist)

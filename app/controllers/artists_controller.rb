@@ -1,15 +1,18 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.all
+    @artists = policy_scope(Artist)
   end
 
   def show
     @artist = Artist.find(params[:id])
+    authorize @artist
     @artwork = Artwork.new
+    authorize @artwork
   end
 
   def new
     @artist = Artist.new
+    authorize @artist
   end
 
   # check if the render :new is essential in this case
