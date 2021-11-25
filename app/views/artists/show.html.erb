@@ -1,7 +1,10 @@
 <h1>#Show</h1>
+
+
 <p><%= @artist.first_name %></p>
 <p><%= @artist.last_name %></p>
 <p><%= @artist.artist_name %></p>
 <p><%= @artist.description %></p>
-
-<%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
+<% @artist.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
