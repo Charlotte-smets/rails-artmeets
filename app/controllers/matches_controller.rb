@@ -7,6 +7,10 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
   end
 
+  def new
+    @match = Match.new
+  end
+
   # def create
   #   artist.favorited?(gallerist) && gallerist.favorited?(artist)
   # end
