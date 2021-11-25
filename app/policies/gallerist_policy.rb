@@ -12,4 +12,12 @@ class GalleristPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def dislike?
+    return true
+  end
+
+  def like?
+    return true
+  end
 end

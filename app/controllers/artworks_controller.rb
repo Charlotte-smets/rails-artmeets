@@ -15,6 +15,7 @@ class ArtworksController < ApplicationController
     # @artist = Artist.find(params[:artist_id])
     @gallerist = current_user.gallerists.first
     @artwork = Artwork.find(params[:id])
+    authorize @artwork
   end
 
   def create
