@@ -1,8 +1,11 @@
 <h1>#Index</h1>
-<div>
-  <% @artworks.each do |artwork| %>
-    <p><%= artwork.title %></p>
+<% @artworks.each do |artwork| %>
+  <div class="border-bottom">
+    <h3><%= artwork.title %></h3>
     <p><%= artwork.date %></p>
-    <p><%= artwork.type %></p>
-  <% end %>
-</div>
+    <p>Id: <%= artwork.id %></p>
+    <p><%= artwork.style %></p>
+    <p><%= artwork.artist.first_name %> | id: <%= artwork.artist.id %> </p>
+    <%= link_to "See details", artwork_path(artwork) %>
+  </div>
+<% end %>
