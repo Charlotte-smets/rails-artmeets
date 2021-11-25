@@ -1,9 +1,11 @@
+<div class="container-fluid" id="artworks-show">
 <h1>Discover new talent</h1>
+<%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %>
 <p><%= @artwork.title %></p>
 <p><%= @artwork.date%></p>
 <p><%= @artwork.style %></p>
 
-<div class="container">
+<div class="container-sm col-12">
   <%= link_to 'Dislike',  dislike_artwork_path, class:"btn-dislike btn-outline-primary"  %>
   <%# <button type="button" class="btn-dislike btn-outline-primary">Dislike</button> %>
   <%= simple_form_for([ @gallerist, @favorite ]) do |f| %>
@@ -14,3 +16,4 @@
 </div>
 
 <%= console %>
+<div>

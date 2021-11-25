@@ -1,7 +1,36 @@
-<h1>#Show</h1>
-<p><%= @artist.first_name %></p>
-<p><%= @artist.last_name %></p>
-<p><%= @artist.artist_name %></p>
-<p><%= @artist.description %></p>
+<div class="container-fluid" id="artworks-index">
+  <div class="d-flex justify-content-between align-bottom page-title">
+  <h1><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
+  <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+  </div>
+<hr>
+    <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637851042/images_zn1s2m.jpg" alt="Girl in a jacket" width="300">
 
-<%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
+  <div class="artwork-info">
+  <h3><%= @artist.first_name %></h3>
+  <h4><%= @artist.last_name %></h4>
+  <p><%= @artist.artist_name %></p>
+  <p><%= @artist.description %></p>
+  <%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
+  </div>
+  <br>
+
+</div>
+
+<div class="container-fluid" id="artworks-index">
+  <div class="d-flex justify-content-between align-bottom page-title">
+  <h1>Discover <br> My artworks</h1>
+  <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+  </div>
+<hr>
+
+
+<div class="d-flex justify-content-between" id="portfolio">
+  <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
+  <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
+</div>
+<div class="d-flex justify-content-between" id="portfolio">
+  <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
+  <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
+
+</div>
