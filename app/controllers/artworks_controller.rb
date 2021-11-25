@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
   def index
-    @artworks = Artwork.all
+    @artworks = policy_scope(Artwork)
+    # @artworks = Artwork.all
     @gallerist = current_user.gallerists.first
     # @artist = Artist.find(params[:artist_id])
   end
@@ -13,7 +14,6 @@ class ArtworksController < ApplicationController
   def show
     # @artist = Artist.find(params[:artist_id])
     @gallerist = current_user.gallerists.first
-    @favorite = Favorite.new
     @artwork = Artwork.find(params[:id])
   end
 
