@@ -11,10 +11,8 @@
     <% artist.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
     <%= link_to "See details", artist_path(artist) %>
   </div>
 <% end %>
-
