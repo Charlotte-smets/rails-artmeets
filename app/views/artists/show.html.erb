@@ -34,3 +34,7 @@
   <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
 
 </div>
+
+<% @artist.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
