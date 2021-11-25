@@ -27,6 +27,9 @@ gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# acts_as_votable GEM (aka Acts As Likeable)
+gem 'acts_as_votable'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

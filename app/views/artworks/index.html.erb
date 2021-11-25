@@ -1,11 +1,15 @@
 <h1>#Index</h1>
 <% @artworks.each do |artwork| %>
-  <div class="border-bottom">
+  <div class="container border-bottom">
     <h3><%= artwork.title %></h3>
     <p><%= artwork.date %></p>
     <p>Id: <%= artwork.id %></p>
     <p><%= artwork.style %></p>
     <p><%= artwork.artist.first_name %> | id: <%= artwork.artist.id %> </p>
     <%= link_to "See details", artwork_path(artwork) %>
+    <%= link_to 'Like', like_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
+    <%= link_to 'Dislike', dislike_gallerist_path(@gallerist, artwork: artwork), method: :post, class:"btn-dislike btn-outline-primary" %>
   </div>
 <% end %>
+
+<%= console %>

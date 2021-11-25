@@ -23,6 +23,25 @@ class ArtistsController < ApplicationController
     end
   end
 
+  # def like
+  #   artwork = Artwork.find(params[:artwork])
+  #   @gallerist = Gallerist.find(params[:id])
+  #   artist = artwork.artist
+  #   artwork.liked_by @gallerist
+  #   if artist.liked? @gallerist
+  #     redirect_to matches_path
+  #   else
+  #     redirect_to artworks_path
+  #   end
+  # end
+
+  # def dislike
+  #   artwork = Artwork.find(params[:artwork])
+  #   @gallerist = Gallerist.find(params[:id])
+  #   artwork.disliked_by @gallerist
+  #   redirect_to artworks_path
+  # end
+
   private
 
   def artist_params
