@@ -1,10 +1,14 @@
 <h1>Discover the gallerists</h1>
 
-<ul>
+<div>
   <% @gallerists.each do |gallerist| %>
-    <li><%= gallerist.name %></li>
+    <p><%= gallerist.name %></p>
+    <p><%= gallerist.address %></p>
+    <p><%= gallerist.description %></p>
+    <p><%= gallerist.rating %></p>
+    <p><% gallerist.photos.first %></p>
+    <% gallerist.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
-</ul>
-
-<%= cl_image_tag("v1637676684/jz2ezk7wcyw1hkkpvwk1.jpg",
-      width: 400, height: 300, crop: :thumb, gravity: :face) %>
+</div>

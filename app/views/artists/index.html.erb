@@ -5,5 +5,10 @@
     <p><%= artist.last_name %></p>
     <p><%= artist.artist_name %></p>
     <p><%= artist.description %></p>
+    <p><%= artist.address %></p>
+    <p><% artist.photos.first %></p>
+    <% artist.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
 </div>
