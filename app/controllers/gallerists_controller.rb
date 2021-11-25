@@ -1,5 +1,4 @@
 class GalleristsController < ApplicationController
-
   def index
     @gallerists = policy_scope(Gallerist)
   end
