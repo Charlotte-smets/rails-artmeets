@@ -4,6 +4,7 @@ class MatchesController < ApplicationController
   end
 
   def show
+    # @artist = Artist.find(params[artist_id])
     @match = Match.find(params[:id])
   end
 
