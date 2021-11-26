@@ -17,7 +17,7 @@ text-align: center;
 
 // ENTETE PAGE - ARTWORK
 .page-title {
-  padding-top: 30px;
+  padding-top: 80px;
   text-align: left;
   text-transform: uppercase;
   margin-bottom: -20px;
@@ -91,3 +91,52 @@ hr {
   text-transform: lowercase;
   text-decoration: underline;
  }
+
+
+ // ARTIST PORTFOLIO
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: 1em;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 576px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
