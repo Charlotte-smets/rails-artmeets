@@ -5,7 +5,9 @@
   </div>
 
   <hr>
-  <%= cl_image_tag @artist.photos.first.key, width: 300, class: "artwork-img" %>
+  <div class="text-center">
+    <%= cl_image_tag @artist.photos.first.key, width: 300, class: "artwork-img" %>
+  </div>
   <hr>
 
   <div class="artwork-info">
