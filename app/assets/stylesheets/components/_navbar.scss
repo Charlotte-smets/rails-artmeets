@@ -7,6 +7,11 @@
 $th_pink:#ffffff;
 $th_dark:#000000;
 
+}
+
+
+
+
 header {
   nav {
     background-color: black;
@@ -48,6 +53,7 @@ header {
           &:hover {
             color:$th_pink;
 
+
           }
         }
       }
@@ -81,6 +87,7 @@ header {
     opacity:1;
     visibility:visible;
     background-color: rgb(230, 17, 17);
+
 
     ul {
       top:70px;
