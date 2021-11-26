@@ -14,12 +14,16 @@
       <br>
       <p><%= @artwork.date %></p>
       <p><%= @artwork.style %></p>
-      <p><%= @artwork.artist.first_name %> | id: <%= @artwork.artist.id %></p>
+      <p><%= @artwork.artist.first_name %>
       <%#= link_to "See details", artwork_path(@artwork) %>
     </div>
-    <div class="d-flex justify-content-around align-items-center mb-2">
-      <%= link_to 'Next', dislike_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-next" %>
-      <%= link_to 'Love', like_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-love" %>
+    <div class="d-flex justify-content-around align-items-center pb-2">
+      <%= link_to dislike_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-next" do %>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+      <%= link_to like_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-love" do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
     </div>
   <%# end %>
 <div>
