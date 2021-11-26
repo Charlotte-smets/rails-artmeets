@@ -6,9 +6,9 @@
 <p><%= @artwork.style %></p>
 
 <div class="container-sm col-12">
-  <%= link_to 'Dislike',  dislike_artwork_path, class:"btn-dislike btn-outline-primary"  %>
 <div class="container">
-  <%= link_to 'Dislike',  dislike_gallerists_path, class:"btn-dislike btn-outline-primary"  %>
+  <%= link_to 'Like', like_gallerist_path(@gallerist), method: :post, class:"btn-dislike btn-outline-primary" %>
+  <%= link_to 'Dislike', dislike_gallerist_path(@gallerist), method: :post, class:"btn-dislike btn-outline-primary" %>
   <%# <button type="button" class="btn-dislike btn-outline-primary">Dislike</button> %>
   <%#= simple_form_for([ @gallerist, @favorite ]) do |f| %>
     <%#= f.submit "Love", class: "btn btn-primary" %>
