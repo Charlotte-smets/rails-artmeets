@@ -7,17 +7,20 @@ font-weight: 600;
 font-size: 30px;
 }
 
-#artworks-index{
+.artworks-index{
 color: rgb(0, 0, 0);
 background: rgb(255, 255, 255);
 height: auto;
 text-align: center;
+  a {
+    text-decoration: none;
+  }
 }
 
 
 // ENTETE PAGE - ARTWORK
 .page-title {
-  padding-top: 30px;
+  padding-top: 40px;
   text-align: left;
   text-transform: uppercase;
   margin-bottom: -20px;
@@ -44,7 +47,7 @@ hr {
 // ARTWORK INFO
 
 .artwork-img {
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 2em;
   border-color: black;
   border: 1px solid rgb(0, 0, 0);
@@ -64,10 +67,18 @@ hr {
 
 .artwork-info{
   margin-top: 20px;
-  margin-left: 40px;
-  text-align: left;
+  // margin-left: 40px;
+  padding-bottom: 5px;
+  text-align: center;
   line-height: 0.2em;
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
+
+  .btn-love {
+    text-decoration: none;
+  }
+  .btn-next {
+    text-decoration: none;
+  }
 }
 
 .artwork-info h3 {
@@ -104,3 +115,52 @@ hr {
   text-transform: lowercase;
   text-decoration: underline;
  }
+
+
+ // ARTIST PORTFOLIO
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: 1em;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 576px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

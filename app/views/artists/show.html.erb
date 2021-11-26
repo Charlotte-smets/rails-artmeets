@@ -3,8 +3,10 @@
     <h1><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
     <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
+
   <hr>
   <%= cl_image_tag @artist.photos.first.key, width: 300, class: "artwork-img" %>
+  <hr>
 
   <div class="artwork-info">
   <h3><%= @artist.first_name %></h3>
@@ -16,6 +18,8 @@
   <br>
 
 </div>
+
+
 
 <div class="container-fluid" id="artworks-index">
   <div class="d-flex justify-content-between align-bottom page-title">
@@ -31,7 +35,6 @@
     <p class="artwork-style"><%= artwork.style %></p>
   </div>
 <% end %>
-
 
 <%# <div class="d-flex justify-content-between" id="portfolio">
   <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
