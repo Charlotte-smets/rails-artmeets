@@ -2,7 +2,7 @@
   <div class="home">
         <h1>🔥 It's an arty match!🔥</h1>
         <h4>We hope you will have a beautiful <br> art story together</p>
-        <%= link_to artist_path do %>
+        <%= link_to artist_path(@match.artist) do %>
         <button class="button-welcome">Contact <%= @match.artist.artist_name %> </button>
         <% end %>
   </div>
