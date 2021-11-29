@@ -47,26 +47,28 @@ hr {
 // ARTWORK INFO
 
 .artwork-img {
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 2em;
   border-color: black;
   border: 1px solid rgb(0, 0, 0);
+  width: 300px;
+  height: 350px;
 }
 
 .artwork-card {
-
+  text-align: center;
 }
 
 .artwork-title {
-
+  text-align: center;
 }
 
 .artwork-style {
-
+  text-align: center;
 }
 
 .artwork-info{
-  margin-top: 10px;
+  margin-top: 45px;
   // margin-left: 40px;
   // padding-bottom: 5px;
   text-align: center;

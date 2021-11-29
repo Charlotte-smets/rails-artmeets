@@ -6,15 +6,14 @@
   <hr>
 
   <%# @artworks.each do |artwork| %>
-    <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844845/balloon-dog-limited-edition-jeff-koons-red-lifestyle-collectible-jeff-koons-smets-919035_600x_kfpwrd.jpg" alt="Girl in a jacket" width="300">
-    <%# <%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @artwork.photo.key, class:"artwork-img" %>
     <div class="artwork-info">
       <h3><%= @artwork.title %> </h3>
-      <h4><%= @artwork.artist.first_name %></h3>
+      <h4><%= @artwork.artist.artist_name %></h3>
       <br>
       <p><%= @artwork.date %></p>
       <p><%= @artwork.style %></p>
-      <p><%= @artwork.artist.first_name %>
+      <p><%= @artwork.artist.artist_name %>
       <%#= link_to "See details", artwork_path(@artwork) %>
     </div>
     <div class="d-flex justify-content-around align-items-center pb-2">
