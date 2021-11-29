@@ -4,25 +4,30 @@
     <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
   <hr>
-
-  <%# @artworks.each do |artwork| %>
-    <%= cl_image_tag @artwork.photo.key, class:"artwork-img" %>
-    <div class="artwork-info">
-      <h3><%= @artwork.title %> </h3>
-      <h4><%= @artwork.artist.artist_name %></h3>
-      <br>
-      <p><%= @artwork.date %></p>
-      <p><%= @artwork.style %></p>
-      <p><%= @artwork.artist.artist_name %>
-      <%#= link_to "See details", artwork_path(@artwork) %>
-    </div>
-    <div class="d-flex justify-content-around align-items-center pb-2">
-      <%= link_to dislike_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-next" do %>
-        <i class="fas fa-arrow-right"></i>
-      <% end %>
-      <%= link_to like_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-love" do %>
-        <i class="fas fa-heart"></i>
+  <div class="swiper" data-controller="swiper">
+    <div class="swiper-wrapper">
+      <% @artworks_filtered.each do |artwork| %>
+        <div class="swiper-slide">
+          <%= cl_image_tag artwork.photo.key, class:"artwork-img" %>
+          <div class="artwork-info">
+            <h3><%= artwork.title %> </h3>
+            <h4><%= artwork.artist.artist_name %></h3>
+            <br>
+            <p><%= artwork.date %></p>
+            <p><%= artwork.style %></p>
+            <p><%= artwork.artist.artist_name %>
+            <%#= link_to "See details", artwork_path(@artwork) %>
+          </div>
+        </div>
       <% end %>
     </div>
-  <%# end %>
+  </div>
+  <div class="d-flex justify-content-around align-items-center pb-2">
+    <%= link_to dislike_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-next" do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+    <%= link_to like_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-love" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
+  </div>
 <div>

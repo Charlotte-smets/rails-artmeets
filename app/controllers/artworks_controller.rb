@@ -2,8 +2,8 @@ class ArtworksController < ApplicationController
   def index
     @artworks = policy_scope(Artwork)
     @gallerist = current_user.gallerists.first
-    artworks_filtered = @artworks.reject { |art| @gallerist.liked?(art) || @gallerist.disliked?(art) }
-    @artwork = artworks_filtered.sample
+    @artworks_filtered = @artworks.reject { |art| @gallerist.liked?(art) || @gallerist.disliked?(art) }
+    # @artwork = artworks_filtered.sample
     # @artist = Artist.find(params[:artist_id])
   end
 
