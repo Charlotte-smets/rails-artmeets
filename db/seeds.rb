@@ -12,9 +12,11 @@ require "open-uri"
 #article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 puts "Cleaning up database..."
+
+Match.destroy_all
 Gallerist.destroy_all
-Artist.destroy_all
 Artwork.destroy_all
+Artist.destroy_all
 User.destroy_all
 puts "Database cleaned"
 

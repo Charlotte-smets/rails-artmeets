@@ -1,12 +1,9 @@
-
 :root {
   font-size:16px;
 }
 
-
 $th_pink:#ffffff;
 $th_dark:#000000;
-
 
 
 header {
@@ -20,6 +17,7 @@ header {
     opacity:0;
     visibility:hidden;
     transition:all 0.3s ease-in-out;
+    text-decoration: none;
 
     ul {
       list-style-type:none;
@@ -30,10 +28,12 @@ header {
       top:170px;
       transition:all 0.3s ease-in-out;
       transform:translateX(-50%);
+      text-decoration: none;
 
       li {
         transform:translateY(50px);
         opacity:0;
+        text-decoration: none;
 
         a {
           display:block;
@@ -49,6 +49,8 @@ header {
 
           &:hover {
             color:$th_pink;
+            text-decoration: none;
+            font-size: 24px;
 
 
           }

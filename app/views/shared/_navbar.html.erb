@@ -7,18 +7,27 @@
   </label>
   <nav>
     <ul>
-      <li>
-        <a href="<%= root_path%>">Home</a>
-        <a href="<%= matches_path%>">My dashboard</a>
-        <br>
-        <br>
-        <a href="<%= new_gallerist_path %>">Add new gallery </a>
-        <a href="<%= artworks_path %>">Discover new talents </a>
-        <br>
-        <br>
-        <a href="<%=  artworks_path %>">Add new artist </a>
-        <a href="<%=  new_gallerist_path  %>">Add new artwork</a>
-      </li>
+      <% if user_signed_in? %>
+        <li>
+          <a href="<%= root_path%>">Home</a>
+          <a href="<%= matches_path%>">My dashboard</a>
+          <br>
+          <br>
+          <a href="<%= new_gallerist_path %>">Add new gallery </a>
+          <a href="<%= artworks_path %>">Discover new talents </a>
+          <br>
+          <br>
+          <a href="<%=  artworks_path %>">Add new artist </a>
+          <a href="<%=  new_gallerist_path  %>">Add new artwork</a>
+          <br>
+          <br>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% else %>
+          <li>
+            <%= link_to "Login", new_user_session_path %>
+          </li>
+      <% end %>
     </ul>
   </nav>
 </header>
