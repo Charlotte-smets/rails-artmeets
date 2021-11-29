@@ -10,7 +10,7 @@ font-size: 30px;
 .artworks-index{
 color: rgb(0, 0, 0);
 background: rgb(255, 255, 255);
-height: auto;
+height: fit-content;
 text-align: center;
   a {
     text-decoration: none;
@@ -46,14 +46,14 @@ hr {
 
 // ARTWORK INFO
 
-.artwork-img {
-  margin-top: 20px;
-  border-radius: 2em;
-  border-color: black;
-  border: 1px solid rgb(0, 0, 0);
-  width: 300px;
-  height: 350px;
-}
+// .artwork-img {
+//   margin-top: 20px;
+//   border-radius: 2em;
+//   border-color: black;
+//   border: 1px solid rgb(0, 0, 0);
+//   width: 300px;
+//   height: 350px;
+// }
 
 .artwork-card {
   text-align: center;
@@ -67,12 +67,32 @@ hr {
   text-align: center;
 }
 
+.artwork-deck-card {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+
+  img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 .artwork-info{
-  margin-top: 45px;
+  padding-top: 15px;
   // margin-left: 40px;
   // padding-bottom: 5px;
   text-align: center;
   line-height: 0.2em;
+  background-color: white;
+  border-radius: 2px;
+  // width: inherit;
+  // height: inherit;
+  flex-grow: 1;
   // margin-bottom: 40px;
 
   .btn-love {

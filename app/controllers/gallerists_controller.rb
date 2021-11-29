@@ -28,7 +28,6 @@ class GalleristsController < ApplicationController
     artist = artwork.artist
     artwork.liked_by @gallerist
     if artist.liked? @gallerist
-      # Problem with creation of a match between artist & gallerist
       @match = Match.new(artist_id: artist.id, gallerist_id: @gallerist.id)
       @match.save
       redirect_to match_path(@match)
