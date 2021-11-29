@@ -1,18 +1,15 @@
+
 <h1>IT'S A MATCHHHHHHH</h1>
 
-
-
-
 <div class="container">
-  <img src="https://www.ilristorante.fr/wp-content/uploads/2019/08/1.-Leonardo-da-vinci.jpg" alt="Avatar" class="card-img">
+  <img src="https://www.ilristorante.fr/wp-content/uploads/2019/08/1.-Leonardo-da-vinci.jpg" alt="Avatar" class="card-img-1">
   <% @matches.each do |match| %>
     <p><%= match.artist.artist_name %></p>
   <% end %>
-</div>
 
-<div class="container">
-  <img src="https://www.ilristorante.fr/wp-content/uploads/2019/08/1.-Leonardo-da-vinci.jpg" alt="Avatar" class="card-img">
+
+  <img src="https://www.ilristorante.fr/wp-content/uploads/2019/08/1.-Leonardo-da-vinci.jpg" alt="Avatar" class="card-img-2">
   <%@matches.each do |match| %>
-      <p><%= match.gallerist.name %> are matched!</p>
+    <p><%= match.gallerist.name %></p>
     <% end %>
 </div>
