@@ -7,7 +7,7 @@
   <div class="swiper" data-controller="swiper">
     <div class="swiper-wrapper">
       <% @artworks_filtered.each do |artwork| %>
-        <div class="swiper-slide">
+        <div class="swiper-slide" data-swiper-url-value=<%= like_gallerist_path(@gallerist, artwork: artwork) %>>
           <div class="artwork-deck-card">
             <%= cl_image_tag artwork.photo.key %>
             <div class="artwork-info">
