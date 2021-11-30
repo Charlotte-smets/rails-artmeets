@@ -22,6 +22,11 @@ export default class extends Controller {
   }
 }
 
+// listen to the event : swipe left(dislike) or swipe rigth (like)
+// if swipe left --> dislike artwork, remove it and save the event
+// if swipe right --> like artwork, remove it and save the event
+// AJAX (fetch method)
+
 // swiper() {
 //   const swiper = document.querySelector('.swiper').swiper;
 //   console.log(swiper)
