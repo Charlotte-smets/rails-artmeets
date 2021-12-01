@@ -12,4 +12,8 @@ class ArtworkPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def filter?
+    true
+  end
 end
