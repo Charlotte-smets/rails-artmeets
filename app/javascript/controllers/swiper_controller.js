@@ -63,7 +63,7 @@ export default class extends Controller {
             title: "<h2>It's an arty match!</h2>",
             text: "We hope you will have a beautiful art story together",
             html:
-              'We hope you will have a beautiful art story together' +
+              'We hope you will have a beautiful art story together!' + '<hr>' +
               `<a href="/artists/${data.artist_id}"><button class="button-welcome">Profile</button></a>` +
               `<a href="/chatrooms/${data.chatroom_id}"><button class="button-welcome">Contact</button></a>`,
             // showCancelButton: true,
