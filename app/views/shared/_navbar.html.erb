@@ -9,20 +9,12 @@
     <ul>
       <% if user_signed_in? %>
         <li>
-          <a href="<%= root_path%>"><i class="fas fa-home"></i> Home</a>
-          <a href="<%= matches_path%>"><i class="fas fa-user"></i> Profile</a>
-          <br>
-          <br>
-          <a href="<%= new_gallerist_path %>">Add new gallery </a>
-          <a href="<%= artworks_path %>"><i class="fas fa-palette"></i> Discover new talents </a>
-          <br>
-          <br>
-          <a href="<%= artworks_path %>">Add new artist </a>
-          <a href="<%= new_gallerist_path  %>">Add new artwork</a>
-          <br>
-          <br>
+          <a href="<%= root_path%>"><i class="fas fa-home"></i> </a>
+          <a href="<%= matches_path%>"><i class="fas fa-user"></i> </a>
+          <a href="<%= root_path%>"><i class="fa fa-comments"></i> </a>
+          <a href="<%= root_path%>"><i class="fa fa-cog"></i> </a>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i> Log out
+            <i class="fas fa-sign-out-alt"></i>
           <% end %>
         </li>
         <% else %>
@@ -33,6 +25,12 @@
           </li>
       <% end %>
     </ul>
+    <input type='checkbox' id='toggle' style='display:none;' />
+    <label class='toggle-btn toggle-btn__cross' for='toggle'>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </label>
   </nav>
 </header>
 

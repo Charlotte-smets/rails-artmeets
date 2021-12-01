@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
   resources :matches, only: %i[index show create]
   get 'dashboard', to: 'pages#dashboard'
+  get 'filter', to: 'artworks#filter'
 end

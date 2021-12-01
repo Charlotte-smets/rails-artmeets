@@ -46,3 +46,36 @@
 .card-like-dislike-btn {
   padding-bottom: 32px;
 }
+
+.header {
+margin-left: 25px;
+}
+
+.header-2 {
+margin-left: 25px;
+}
+
+.container {
+display: flex;
+align-content: stretch;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-between;
+align-items: stretch;
+margin-top: 112px;
+margin-left: -5px;
+}
+
+.add-filter {
+margin-bottom: -38px;
+margin-left: 25px;
+padding-top: 50px;
+font-size: small;
+font-weight: 100;
+line-height: 30%;
+}
+
+.add-more {
+font-size: small;
+font-weight: 100;
+}
