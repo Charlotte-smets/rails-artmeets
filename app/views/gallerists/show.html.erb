@@ -1,9 +1,27 @@
 <h1>Gallery</h1>
 
-<h2><%= @gallerist.name %></h2>
-<p><%= @gallerist.address %></p>
-<p><%= @gallerist.rating %></p>
 
-<% @gallerist.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
+
+
+
+<div class="container-fluid" id="artworks-index">
+  <div class="d-flex justify-content-between align-bottom page-title">
+    <h1><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
+    <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+  </div>
+
+  <hr>
+  <div class="text-center">
+    <%= cl_image_tag @artist.photos.first.key, width: 300, class: "artwork-img" %>
+  </div>
+  <hr>
+
+  <div class="artwork-info">
+  <h3><%= @gallerist.name %></h3>
+  <h4><%= @gallerist.address %></h4>
+  <%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
+  </div>
+  <br>
+
+</div>
