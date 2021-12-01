@@ -40,7 +40,6 @@ class GalleristsController < ApplicationController
       respond_to do |format|
         format.json { render json: { artwork_id: artwork.id, match: false } }
       end
-      # redirect_to artworks_path
     end
   end
 
@@ -51,7 +50,6 @@ class GalleristsController < ApplicationController
     artwork.disliked_by @gallerist
     respond_to do |format|
       format.json { render json: { artwork_id: artwork.id } }
-      # redirect_to artworks_path
     end
   end
 
@@ -60,8 +58,4 @@ class GalleristsController < ApplicationController
   def gallerist_params
     params.require(:gallerist).permit(:first_name, :last_name, :rating, :address, :description, :name, photos: [])
   end
-
-  # def match_params
-  #   params.require(:match)
-  # end
 end
