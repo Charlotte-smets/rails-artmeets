@@ -31,13 +31,14 @@ class GalleristsController < ApplicationController
       @match = Match.new(artist_id: artist.id, gallerist_id: @gallerist.id)
       respond_to do |format|
         @match.save
+        chatroom = Chatroom.where(match_id: @match.id).first
         # format.html { redirect_to match_path(@match) }
         # format.text { render partial: 'shared/match.html' }
-        format.json { render json: { artwork_id: artwork.id } }
+        format.json { render json: { artwork_id: artwork.id, match: true, artist_id: artist.id, chatroom_id: chatroom.id } }
       end
     else
       respond_to do |format|
-        format.json { render json: { artwork_id: artwork.id } }
+        format.json { render json: { artwork_id: artwork.id, match: false } }
       end
       # redirect_to artworks_path
     end
