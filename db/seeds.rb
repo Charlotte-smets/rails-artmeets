@@ -6,6 +6,7 @@ require "open-uri"
 
 puts "Cleaning up database..."
 
+Message.destroy_all
 Chatroom.destroy_all
 Match.destroy_all
 Gallerist.destroy_all
