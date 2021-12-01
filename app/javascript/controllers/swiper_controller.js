@@ -16,35 +16,39 @@ export default class extends Controller {
     });
 
     swiper.on('slideNextTransitionStart', function () {
-      console.log("slide is disliked");
+      // console.log("slide is disliked");
+      // const btnDislike = document.querySelector('.btn-next');
+      // console.log(btnDislike);
+      // btnDislike.style.backgroundColor = 'red';
       const urlDislike = `/gallerists/${swiper.slides[swiper.previousIndex].dataset.galleristId}/dislike?artwork=${swiper.slides[swiper.previousIndex].dataset.artworkId}`
-      // console.log(swiper.slides[swiper.previousIndex]);
-      // console.log(urlDislike);
       fetch(urlDislike, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
       })
       .then(response => response.json())
       .then((data) => {
-        // console.log(swiper);
-        // console.log(swiper.previousIndex);
-        // console.log(swiper.activeIndex);
         swiper.removeSlide(swiper.activeIndex - 2);
       });
+      // btnDislike.style.backgroundColor = 'transparent';
     });
 
+    // swiper.on('slideNextTransitionEnd', function () {
+    //   // console.log("slide is disliked");
+    //   const btnDislike = document.querySelector('.btn-next');
+    //   btnDislike.style.backgroundColor = 'transparent';
+    // });
+
     swiper.on('slidePrevTransitionStart', function () {
-      console.log('slide is liked');
+      // console.log('slide is liked');
       const urlLike = swiper.slides[swiper.previousIndex].dataset.swiperUrlValue;
-      console.log(urlLike);
+      // console.log(urlLike);
       fetch(urlLike, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
-        // redirect: 'follow'
       })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         // document.querySelector(`[data-artwork-id="${data.artwork_id}"]`).remove()
         const match = data.match;
         if (match === true) {
@@ -59,7 +63,7 @@ export default class extends Controller {
             title: "<h2>It's an arty match!</h2>",
             text: "We hope you will have a beautiful art story together",
             html:
-              'We hope you will have a beautiful art story together' +
+              'We hope you will have a beautiful art story together!' + '<hr>' +
               `<a href="/artists/${data.artist_id}"><button class="button-welcome">Profile</button></a>` +
               `<a href="/chatrooms/${data.chatroom_id}"><button class="button-welcome">Contact</button></a>`,
             // showCancelButton: true,
@@ -67,27 +71,8 @@ export default class extends Controller {
             // // cancelButtonColor: '#d33',
             // confirmButtonText: 'Profile',
             // cancelButtonText: 'Contact',
-            // footer: '<button class="btn btn-primary">Why do I have this issue?</button>',
             backdrop: `rgba(0,0,0,0.4)`
           })
-          // .then((result) => {
-          //   if (result.isConfirmed) {
-          //     swalWithBootstrapButtons.fire(
-          //       'Deleted!',
-          //       'Your file has been deleted.',
-          //       'success'
-          //     )
-          //   } else if (
-          //     /* Read more about handling dismissals below */
-          //     result.dismiss === Swal.DismissReason.cancel
-          //   ) {
-          //     swalWithBootstrapButtons.fire(
-          //       'Cancelled',
-          //       'Your imaginary file is safe :)',
-          //       'error'
-          //     )
-          //   }
-          // });
           swiper.removeSlide(swiper.activeIndex);
           swiper.slideTo(-1, 0, false);
         } else {
