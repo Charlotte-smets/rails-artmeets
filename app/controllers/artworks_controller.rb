@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
   def index
-    if params[:style].keys.present?
+    if params[:style] && params[:style].keys.present?
       @artworks = []
       params[:style].each_key do |style|
         @artworks << policy_scope(Artwork).where(style: style)
