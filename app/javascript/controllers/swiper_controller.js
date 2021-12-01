@@ -1,10 +1,10 @@
 import { Controller } from "stimulus";
 import Swiper from 'swiper/swiper-bundle.min';
 import { csrfToken } from "@rails/ujs";
+import Swal from 'sweetalert2';
 
 export default class extends Controller {
   static targets = []
-  // static values = { url: String }
 
   connect() {
     const swiper = new Swiper(this.element, {
@@ -12,29 +12,23 @@ export default class extends Controller {
       loop: true,
       grabCursor: true,
       centeredSlides: true,
-      effect: 'flip',
       followFinger: true,
     });
-
-    console.log(swiper);
-    console.log(swiper.previousIndex);
-    console.log(swiper.activeIndex);
 
     swiper.on('slideNextTransitionStart', function () {
       console.log("slide is disliked");
       const urlDislike = `/gallerists/${swiper.slides[swiper.previousIndex].dataset.galleristId}/dislike?artwork=${swiper.slides[swiper.previousIndex].dataset.artworkId}`
-      console.log(swiper.slides[swiper.previousIndex]);
-      console.log(urlDislike);
+      // console.log(swiper.slides[swiper.previousIndex]);
+      // console.log(urlDislike);
       fetch(urlDislike, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
       })
       .then(response => response.json())
       .then((data) => {
-        // document.querySelector(`[data-artwork-id="${data.artwork_id}"]`).remove()
-        console.log(swiper);
-        console.log(swiper.previousIndex);
-        console.log(swiper.activeIndex);
+        // console.log(swiper);
+        // console.log(swiper.previousIndex);
+        // console.log(swiper.activeIndex);
         swiper.removeSlide(swiper.activeIndex - 2);
       });
     });
@@ -50,26 +44,57 @@ export default class extends Controller {
       })
       .then(response => response.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         // document.querySelector(`[data-artwork-id="${data.artwork_id}"]`).remove()
-        console.log(swiper);
-        console.log(swiper.previousIndex);
-        console.log(swiper.activeIndex);
-        swiper.removeSlide(swiper.activeIndex);
-        swiper.slideTo(-1, 0, false);
+        const match = data.match;
+        if (match === true) {
+          const swalWithCustomsButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'button-welcome',
+              cancelButton: 'button-welcome'
+            },
+            buttonsStyling: false
+          })
+          swalWithCustomsButtons.fire({
+            title: "<h2>It's an arty match!</h2>",
+            text: "We hope you will have a beautiful art story together",
+            html:
+              'We hope you will have a beautiful art story together' +
+              `<a href="/artists/${data.artist_id}"><button class="button-welcome">Profile</button></a>` +
+              `<a href="/chatrooms/${data.chatroom_id}"><button class="button-welcome">Contact</button></a>`,
+            // showCancelButton: true,
+            // // confirmButtonColor: '#3085d6',
+            // // cancelButtonColor: '#d33',
+            // confirmButtonText: 'Profile',
+            // cancelButtonText: 'Contact',
+            // footer: '<button class="btn btn-primary">Why do I have this issue?</button>',
+            backdrop: `rgba(0,0,0,0.4)`
+          })
+          // .then((result) => {
+          //   if (result.isConfirmed) {
+          //     swalWithBootstrapButtons.fire(
+          //       'Deleted!',
+          //       'Your file has been deleted.',
+          //       'success'
+          //     )
+          //   } else if (
+          //     /* Read more about handling dismissals below */
+          //     result.dismiss === Swal.DismissReason.cancel
+          //   ) {
+          //     swalWithBootstrapButtons.fire(
+          //       'Cancelled',
+          //       'Your imaginary file is safe :)',
+          //       'error'
+          //     )
+          //   }
+          // });
+          swiper.removeSlide(swiper.activeIndex);
+          swiper.slideTo(-1, 0, false);
+        } else {
+          swiper.removeSlide(swiper.activeIndex);
+          swiper.slideTo(-1, 0, false);
+        }
       });
     });
   }
 }
-
-// listen to the event : swipe left(dislike) or swipe rigth (like)
-// if swipe left --> dislike artwork, remove it and save the event
-// if swipe right --> like artwork, remove it and save the event
-// AJAX (fetch method)
-
-// swiper() {
-//   const swiper = document.querySelector('.swiper').swiper;
-//   console.log(swiper)
-//   // Now you can use all slider methods like
-//   swiper.slideNext();
-// }
