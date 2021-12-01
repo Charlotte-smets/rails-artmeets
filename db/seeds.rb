@@ -97,7 +97,7 @@ artwork1.save!
 artwork2 = Artwork.new(title: "Your body is a battleground", style: "Silkscreen on vinyl")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637928645/mtpyv0kyrtxc1qw7cmzs.jpg')
 artwork2.photo.attach(io: file, filename: 'artwork2.png', content_type: 'img/png')
-artwork2.artist = artist3
+artwork2.artist = artist2
 artwork2.save!
 
 artwork3 = Artwork.new(title: "vibranting colors", style: "Hard Edge Painting")
@@ -139,7 +139,7 @@ artwork8.save!
 artwork9 = Artwork.new(title: "Tan Tan Bo", style: "Pop art")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929345/ff1zb026lp4aj9afvc0i.jpg')
 artwork9.photo.attach(io: file, filename: 'artwork9.png', content_type: 'img/png')
-artwork9.artist = artist4
+artwork9.artist = artist3
 artwork9.save!
 
 artwork10 = Artwork.new(title: "Vinyl Figure", style: "Sculptor")
