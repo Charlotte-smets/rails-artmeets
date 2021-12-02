@@ -25,7 +25,7 @@ height: -webkit-fill-available;
 // ENTETE PAGE - ARTWORK
 
 .page-title {
-  padding-top: 70px;
+  padding-top: 38px;
   text-align: left;
   text-transform: uppercase;
   margin-bottom: -20px;
@@ -42,7 +42,7 @@ hr {
   border: 1px solid rgb(0, 0, 0);
 }
 
-.arrow{
+.arrow {
   width: 25px;
   height: 100%;
   object-fit: cover;
@@ -63,6 +63,7 @@ hr {
 
 .artwork-card {
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .artwork-title {
@@ -74,7 +75,7 @@ hr {
 }
 
 .artwork-deck-card {
-  height: 500px;
+  height: 570px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -82,14 +83,14 @@ hr {
   background: white;
 
   img {
-    height: 350px;
+    height: 420px;
     width: 100%;
     object-fit: cover;
   }
 }
 
 .artwork-info{
-  padding-top: 50px;
+  padding-top: 25px;
   // margin-left: 40px;
   // padding-bottom: 5px;
   text-align: center;

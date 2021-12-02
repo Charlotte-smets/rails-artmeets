@@ -1,10 +1,10 @@
 <div class="container-fluid artworks-index">
   <div class="d-flex justify-content-between align-bottom page-title">
-    <h1>Discover <br>new Talents</h1>
+    <h1 class="pt-4">Discover <br>new Talents</h1>
     <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
   <hr>
-  
+
   <div class="swiper" data-controller="swiper">
     <div class="swiper-wrapper">
       <% @artworks_filtered.each do |artwork| %>
@@ -29,11 +29,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-around align-items-center card-like-dislike-btn">
-    <%= link_to dislike_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-next" do %>
-      <i class="fas fa-times"></i> Nope
-    <% end %>
-    <%= link_to like_gallerist_path(@gallerist, artwork: @artwork), method: :post, class:"btn-love" do %>
-      <i class="far fa-heart"></i> Love
-    <% end %>
+      <a href="#", class="btn-next"><i class="fas fa-times"></i> Nope</a>
+      <a href="#", class="btn-love"><i class="far fa-heart"></i> Love</a>
   </div>
 <div>
