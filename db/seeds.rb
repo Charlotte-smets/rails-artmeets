@@ -64,9 +64,19 @@ artist5.save!
 puts "Artists created!"
 
 puts "Creating Gallerist... "
-gallerist1 = Gallerist.new(first_name: "Marietta", last_name: "Vinci-Corsini", name: "Maison d’Art", address: "Paris", description: "Founded in 1997, have assisted the most prestigious museums in Paris and around the world", rating: "4.5")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637932244/vaxqxtzbwdjnxaiwutpb.jpg')
-gallerist1.photos.attach(io: file, filename: 'gallerist1.png', content_type:'img/png')
+gallerist1 = Gallerist.new(first_name: "Clement", last_name: "Azalbert", name: "Art For All", address: "Paris", description: "Founded in September 2021, we are a young gallery with the will to give visibility to new talents. We are open to every kind of arts!", rating: "4.5")
+file1 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638460832/production/gallerist-logo_wvkqqa.png')
+gallerist1.photos.attach(io: file1, filename: 'gallerist-logo.png', content_type: 'img/png')
+file2 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-1_fvcmzb.png')
+gallerist1.photos.attach(io: file2, filename: 'gallerist-1.png', content_type: 'img/png')
+file3 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-2_uit4pv.png')
+gallerist1.photos.attach(io: file3, filename: 'gallerist-2.png', content_type: 'img/png')
+file4 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-3_sdi1fh.png')
+gallerist1.photos.attach(io: file4, filename: 'gallerist-3.png', content_type: 'img/png')
+file5 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-4_ukdmxj.png')
+gallerist1.photos.attach(io: file5, filename: 'gallerist-4.png', content_type: 'img/png')
+file6 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-5_wmsxos.png')
+gallerist1.photos.attach(io: file6, filename: 'gallerist-5.png', content_type: 'img/png')
 gallerist1.user = clement
 gallerist1.save!
 gallerist1.liked_by artist4
