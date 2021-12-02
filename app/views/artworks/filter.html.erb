@@ -21,15 +21,15 @@
       <div class="add-filter-2">
         <p style="font-weight:lighter">Pick styles that match yours!</p>
       </div>
-      <%["Sketch",
-          "Silkscreen on vinyl",
-          "Dark Painting",
-          "Pop art",
-          "Hard Edge Painting",
-          "Digital Dialogues",
-          "Sculptor",
-          "Screen Print on Paper",
-          "Lithographs and Silkscreen",
+      <%["Painting",
+          "Drawing",
+          "Photography",
+          "Digital Art",
+          "Sculpture",
+          "Cartoon",
+          "Graffiti",
+          "Graphic Design",
+          "Engraving",
           ].each do |style|%>
           <%= check_box_tag "style[#{style}]", style, nil, id: style.downcase.gsub(" ", "_"), class: "tag-selector"%>
           <%= label_tag style.downcase.gsub(" ", "_"), style%>
@@ -48,3 +48,5 @@
     <input type="hidden" name="snippet[tag_ids][]" value="">
   </fieldset>
 </div>
+
+<%# "Sketch", "Silkscreen on vinyl", "Dark Painting", "Pop art", "Hard Edge Painting", "Digital Dialogues", "Sculptor", "Screen Print on Paper", "Lithographs and Silkscreen", %>

@@ -1,9 +1,5 @@
 require "open-uri"
 
-#file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-#article = Artist.new(title: 'NES', body: "A great console")
-#article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
 puts "Cleaning up database..."
 
 Message.destroy_all
@@ -22,49 +18,70 @@ clement = User.create(email: "clement@gmail.com", password: "123456")
 puts 'Done!'
 
 puts "Creating Artists..."
-# artist1 = Artist.new(first_name: "Leonardo", last_name: "da Vinci", artist_name: "da Vinci", address: "Italy", description: "The original Renaissance Man")
-# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST3_qvhign.jpg')
-artist1 = Artist.new(first_name: "Christopher", last_name: "Wool", artist_name: "Christopher Wool", address: "New York", description: "Post-conceptual.")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637927820/m6mhhrtyyip6s2fddcyx.jpg')
-artist1.photos.attach(io: file, filename: 'artist1.png', content_type: 'img/png')
+artist1 = Artist.new(first_name: "Martin", last_name: "Leroux", artist_name: "LRX", address: "London", description: "English painter from Les beaux Arts de Paris. Travelling a lot. I mostly do paintings on oil.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist1.photos.attach(io: file, filename: 'martindepalle.png', content_type: 'img/png')
 artist1.user = charlotte
 artist1.save!
 
-# artist2 = Artist.new(first_name: "Darryl", last_name: "McCray", artist_name: "Cornbread", address: "New York", description: "modern graffiti artist.")
-# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST4_x7fuc7.jpg')
-artist2 = Artist.new(first_name: "Barbara", last_name: "Kruger", artist_name: "Barbara Kruger", address: "Paris", description: "Art conceptuel, Art contemporain, Postmodern art")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637928465/cxpwkcifwx19m9jhnhpt.jpg')
-artist2.photos.attach(io: file, filename: 'artist2.png', content_type: 'img/png')
-artist2.user = clement
+artist2 = Artist.new(first_name: "Mitch", last_name: "Kruger", artist_name: "itsallinsideus", address: "Amsterdam", description: "If you are looking for creative arts, you have come to the right place. I do painting, graphic design, sklupturing... and many other arts!")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist2.photos.attach(io: file, filename: 'itsallinsideus.png', content_type: 'img/png')
+artist2.user = mohammad
 artist2.save!
 
-# artist3 = Artist.new(first_name: "Jean-luc", last_name: "Lacroix", artist_name: "Lacroix", address: "Paris", description: "keen sense for abstraction")
-# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST_tmrfof.jpg')
-artist3 = Artist.new(first_name: "Takashi", last_name: "Murakami", artist_name: "Takashi Murakami", address: "Tokyo", description: "Superflat, Art contemporain, Pop art")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929226/usttwrdrloau1tp60hox.jpg')
-artist3.photos.attach(io: file, filename: 'artist3.png', content_type: 'img/png')
-artist3.user = mohammad
+artist3 = Artist.new(first_name: "Cole", last_name: "Newman", artist_name: "Cole's Color", address: "London", description: "My process is an exploration into the utilization of gravity within art, the laws of physics translated to a canvas.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist3.photos.attach(io: file, filename: 'colescolor.png', content_type: 'img/png')
+artist3.user = charlotte
 artist3.save!
 
-# artist4 = Artist.new(first_name: "Pierre", last_name: "Dubreuil ", artist_name: "Dubreuil ", address: "Paris", description: "photographer")
-# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST2_iwqmzg.jpg')
-artist4 = Artist.new(first_name: "Peter", last_name: "Halley", artist_name: "Peter Halley", address: "New York", description: "Hard Edge Painting, Neo-conceptual art, Minimalisme.")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637925161/chu274sa816fdwjvtdxt.jpg')
-artist4.photos.attach(io: file, filename: 'artist4.png', content_type: 'img/png')
-artist4.user = charlotte
+artist4 = Artist.new(first_name: "Paul", last_name: "Vignal", artist_name: "Quasar", address: "Angers", description: "French artist from Angers, resin sculptor and pop art style inclusion.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist4.photos.attach(io: file, filename: 'quasar.png', content_type: 'img/png')
+artist4.user = mohammad
 artist4.save!
 
-# artist5 = Artist.new(first_name: "John", last_name: "Hamon", artist_name: "Hamon", address: "Paris", description: "photographer")
-# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST1_c8atmq.jpg')
-artist5 = Artist.new(first_name: "Brian", last_name: "Donnelly", artist_name: "Kaws", address: "New York", description: "Sculptor, Painter, Designer")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929696/c5rryhkdzqsunv8ovwjh.jpg')
-artist5.photos.attach(io: file, filename: 'artist5.png', content_type: 'img/png')
+artist5 = Artist.new(first_name: "Valentin", last_name: "Pavageau", artist_name: "Paval", address: "Bruxelles", description: "Belgian artist living in Liège. I do digital painting.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist5.photos.attach(io: file, filename: 'paval.png', content_type: 'img/png')
 artist5.user = charlotte
 artist5.save!
+
+artist6 = Artist.new(first_name: "Victor", last_name: "Zarama", artist_name: "Vivizama", address: "Marseille", description: "French Manga & Anime Artist. I love drawing my favorite manga & anime!")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist6.photos.attach(io: file, filename: 'vivizama.png', content_type: 'img/png')
+artist6.user = mohammad
+artist6.save!
+
+artist7 = Artist.new(first_name: "Cyprien", last_name: "Dupont", artist_name: "Hibouch", address: "Paris", description: "Drawer, architect, musician. Tolerates dogs.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist7.photos.attach(io: file, filename: 'hibouch.png', content_type: 'img/png')
+artist7.user = charlotte
+artist7.save!
+
+artist8 = Artist.new(first_name: "Yemenja", last_name: "Miller", artist_name: "Cookie-illustration", address: "Paris", description: "Self taught illustrator and designer, currently living in Paris.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist8.photos.attach(io: file, filename: 'cookie.png', content_type: 'img/png')
+artist8.user = mohammad
+artist8.save!
+
+artist9 = Artist.new(first_name: "Antoine", last_name: "Cabrol", artist_name: "weirdsetups", address: "Lyon", description: "French photograph from Lyon, France. I love taking weird setups in daily life.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638478455/production/avatar_xtvoar.jpg')
+artist9.photos.attach(io: file, filename: 'cookie.png', content_type: 'img/png')
+artist9.user = charlotte
+artist9.save!
+
+artist10 = Artist.new(first_name: "Timothée", last_name: "Depalle", artist_name: "Mr.Ghostbelette", address: "Paris", description: "French artist living in Paris. I love ghosts, painting and drawing ghosts. Skateboard lover.")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481163/production/mr-ghostbelette_profile-picture_fycjn0.jpg')
+artist10.photos.attach(io: file, filename: 'mrghostbelette.png', content_type: 'img/png')
+artist10.user = mohammad
+artist10.save!
+
 puts "Artists created!"
 
 puts "Creating Gallerist... "
-gallerist1 = Gallerist.new(first_name: "Clement", last_name: "Azalbert", name: "Art For All", address: "Paris", description: "Founded in September 2021, we are a young gallery with the will to give visibility to new talents. We are open to every kind of arts!", rating: "4.5")
+gallerist1 = Gallerist.new(first_name: "Clement", last_name: "Azalbert", name: "Art For All", address: "16 Villa Gaudelet, 75011 Paris", description: "Founded in September 2021, we are a young gallery based in Paris, with the will to give visibility to new talents. We are open to every kind of arts!", rating: "4.5")
 file1 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638460832/production/gallerist-logo_wvkqqa.png')
 gallerist1.photos.attach(io: file1, filename: 'gallerist-logo.png', content_type: 'img/png')
 file2 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/production/gallerist-1_fvcmzb.png')
@@ -79,92 +96,114 @@ file6 = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638461037/pr
 gallerist1.photos.attach(io: file6, filename: 'gallerist-5.png', content_type: 'img/png')
 gallerist1.user = clement
 gallerist1.save!
-gallerist1.liked_by artist4
+gallerist1.liked_by artist10
 
-#gallerist2 = Gallerist.new(first_name: "David", last_name: "Zwirner", name: "David Zwirner", address: "Paris", description: "Galerie David Zwirner, voted most powerful figure of the art world by Artreview in 2018, opened a new space in Paris on October 16, 2019.", rating: "4.7")
-#file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
-#gallerist2.photos.attach(io: file, filename: 'gallerist2.png', content_type:'img/png')
-#gallerist2.user = clement
-#gallerist2.save!
-
-#gallerist3 = Gallerist.new(first_name: "Daniel", last_name: "Templon", name: "Galerie Daniel Templon", address: "Paris", description: "Daniel Templon is the patriarch of the Parisian gallerists!", rating: "4.4")
-#file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
-#gallerist3.photos.attach(io: file, filename: 'gallerist3.png', content_type:'img/png')
-#gallerist3.user = mohammad
-#gallerist3.save!
-
-#gallerist4 = Gallerist.new(first_name: "Thaddaeus", last_name: "Ropac", name: "Galerie Thaddaeus Ropac", address: "Paris", description: "Ropac now has galleries in London, Paris, and Salzburg, representing the estates of legendary artists.", rating: "4.6")
-#file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
-#gallerist4.photos.attach(io: file, filename: 'gallerist4.png', content_type:'img/png')
-#gallerist4.user = charlotte
-#gallerist4.save!
-
-#gallerist5 = Gallerist.new(first_name: "Marian", last_name: "Goodman", name: "Marian Goodman Gallery", address: "Paris", description: "One of the rare women leading an international gallery, Marian Goodman is a grande dame of American Art.", rating: "4.8")
-#file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
-#gallerist5.photos.attach(io: file, filename: 'gallerist5.png', content_type: 'img/png')
-#gallerist5.user = clement
-#gallerist5.save!
 puts "Gallerists created!"
 
 puts "Creating Artwork..."
 
-artwork1 = Artwork.new(title: "New Era ", style: "Dark Painting")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637928009/vlbqetpyb8tn5zewqjgv.jpg')
-artwork1.photo.attach(io: file, filename: 'artwork1.png', content_type: 'img/png')
+# artist1 = LRX
+artwork1 = Artwork.new(title: "Life is a dog", style: "Painting")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-painting-martindepale_c7hzil.jpg')
+artwork1.photo.attach(io: file, filename: 'artwork-lrx.png', content_type: 'img/png')
 artwork1.artist = artist1
 artwork1.save!
 
-artwork2 = Artwork.new(title: "Your body is a battleground", style: "Silkscreen on vinyl")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637928645/mtpyv0kyrtxc1qw7cmzs.jpg')
-artwork2.photo.attach(io: file, filename: 'artwork2.png', content_type: 'img/png')
+# artist2 = itsallinsideus
+artwork2 = Artwork.new(title: "copie", style: "Painting")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-painting-itsallinsideus_zjxb7x.jpg')
+artwork2.photo.attach(io: file, filename: 'artwork-itsallinsideus.png', content_type: 'img/png')
 artwork2.artist = artist2
 artwork2.save!
 
-artwork3 = Artwork.new(title: "vibranting colors", style: "Hard Edge Painting")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637923137/lfdky2tj4zjjcrncexmi.jpg')
-artwork3.photo.attach(io: file, filename: 'artwork3.png', content_type: 'img/png')
+# artist 4 = Quasar
+artwork3 = Artwork.new(title: "Super Mario with hearts", style: "Sculpture")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-scupture_quasarcreations_icxjmv.jpg')
+artwork3.photo.attach(io: file, filename: 'artwork-quasar.png', content_type: 'img/png')
 artwork3.artist = artist4
 artwork3.save!
 
-artwork4 = Artwork.new(title: "The Peter Halley Dialogues", style: "Digital Dialogues")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637926256/nxtutsolqv7ze2gxlhtk.jpg')
-artwork4.photo.attach(io: file, filename: 'artwork4.png', content_type: 'img/png')
-artwork4.artist = artist4
+# artist 8 = Cookie-illustration
+artwork4 = Artwork.new(title: "Bodypositive", style: "Digital Art")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets_cookie-illustrations-digital-arts-1_mtcxqg.jpg')
+artwork4.photo.attach(io: file, filename: 'artwork-cookie-illustrations.png', content_type: 'img/png')
+artwork4.artist = artist8
 artwork4.save!
 
-artwork5 = Artwork.new(title: "The Geometry Crisis", style: "Hard Edge Painting")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637926549/po1yg3azgsh49ulut9tm.jpg')
-artwork5.photo.attach(io: file, filename: 'artwork5.png', content_type: 'img/png')
-artwork5.artist = artist4
+# artist 3 = Cole's Color
+artwork5 = Artwork.new(title: "Geometry", style: "Painting")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-painting_colescolor_fsxlls.jpg')
+artwork5.photo.attach(io: file, filename: 'artwork-colescolor.png', content_type: 'img/png')
+artwork5.artist = artist3
 artwork5.save!
 
-artwork6 = Artwork.new(title: "Au-Dessous / Au-Dessus", style: "Sketch")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637926950/wfugaklyv1zcim1jclov.jpg')
-artwork6.photo.attach(io: file, filename: 'artwork6.png', content_type: 'img/png')
-artwork6.artist = artist4
+# artist 5 = Paval
+artwork6 = Artwork.new(title: "Exhibition", style: "Digital Art")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-digital-art_valentinpavageau_irz1fc.jpg')
+artwork6.photo.attach(io: file, filename: 'artwork-paval.png', content_type: 'img/png')
+artwork6.artist = artist5
 artwork6.save!
 
-artwork7 = Artwork.new(title: "Pardes", style: "Screen Print on Paper")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637927108/cfkcisqlsziy8wi57kwk.jpg')
-artwork7.photo.attach(io: file, filename: 'artwork7.png', content_type: 'img/png')
-artwork7.artist = artist4
+# artist 6 = Vivizama
+artwork7 = Artwork.new(title: "Demon Slayer, Infinity Train Fanar", style: "Drawing")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing_vivizama-2_dnmtkr.jpg')
+artwork7.photo.attach(io: file, filename: 'artwork-vivizama.png', content_type: 'img/png')
+artwork7.artist = artist6
 artwork7.save!
 
-artwork8 = Artwork.new(title: "Stop Word", style: "Lithographs and Silkscreen")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637927306/cldhux3xeariz8s2fogp.jpg')
-artwork8.photo.attach(io: file, filename: 'artwork8.png', content_type: 'img/png')
-artwork8.artist = artist4
+# artist 7 = Hibouch
+artwork8 = Artwork.new(title: "Surfing", style: "Drawing")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-drawing_hibouch_jdktgp.jpg')
+artwork8.photo.attach(io: file, filename: 'artwork-hibouch.png', content_type: 'img/png')
+artwork8.artist = artist7
 artwork8.save!
 
-artwork9 = Artwork.new(title: "Tan Tan Bo", style: "Pop art")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929345/ff1zb026lp4aj9afvc0i.jpg')
-artwork9.photo.attach(io: file, filename: 'artwork9.png', content_type: 'img/png')
-artwork9.artist = artist3
+# artist 9 = weirdsetups
+artwork9 = Artwork.new(title: "Morning Coffee", style: "Photography")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-photography_weirdsetups_bhl3cp.jpg')
+artwork9.photo.attach(io: file, filename: 'artwork-weirdsetups.png', content_type: 'img/png')
+artwork9.artist = artist9
 artwork9.save!
 
-artwork10 = Artwork.new(title: "Vinyl Figure", style: "Sculptor")
-file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929818/p95wkonjdp1jtvwzkp7n.jpg')
-artwork10.photo.attach(io: file, filename: 'artwork10.png', content_type: 'img/png')
-artwork10.artist = artist5
+# artist 10 = Mr.Ghostbelette
+artwork10 = Artwork.new(title: "Sorry no Ghost", style: "Digital Art")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_digital-arts-2_tpz8lx.jpg')
+artwork10.photo.attach(io: file, filename: 'artwork1-mrghosbelette.png', content_type: 'img/png')
+artwork10.artist = artist10
 artwork10.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork11 = Artwork.new(title: "Ghost Note", style: "Painting")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_painting-mrghostbellete-2_zueget.jpg')
+artwork11.photo.attach(io: file, filename: 'artwork2-mrghosbelette.png', content_type: 'img/png')
+artwork11.artist = artist10
+artwork11.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork12 = Artwork.new(title: "It's skateday", style: "Photography")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-photo-mrghostbellette_iwntid.jpg')
+artwork12.photo.attach(io: file, filename: 'artwork3-mrghostbelette.png', content_type: 'img/png')
+artwork12.artist = artist10
+artwork12.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork13 = Artwork.new(title: "Ghost player", style: "Digital Art")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_digital-arts-3_dx6fy0.jpg')
+artwork13.photo.attach(io: file, filename: 'artwork4-mrghostbelette.png', content_type: 'img/png')
+artwork13.artist = artist10
+artwork13.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork14 = Artwork.new(title: "Ghost car", style: "Painting")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-painting-mrghostbellette_wvwzbp.jpg')
+artwork14.photo.attach(io: file, filename: 'artwork5-mrghostbelette.png', content_type: 'img/png')
+artwork14.artist = artist10
+artwork14.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork15 = Artwork.new(title: "Ghost Madzine", style: "Drawing")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing-mrghostbellette_pkj6l1.jpg')
+artwork15.photo.attach(io: file, filename: 'artwork6-mrghostbelette.png', content_type: 'img/png')
+artwork15.artist = artist10
+artwork15.save!
 puts "Artworks Created!"
