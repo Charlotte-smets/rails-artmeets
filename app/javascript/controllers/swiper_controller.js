@@ -54,18 +54,20 @@ export default class extends Controller {
         if (match === true) {
           const swalWithCustomsButtons = Swal.mixin({
             customClass: {
-              confirmButton: 'button-welcome',
-              cancelButton: 'button-welcome'
+              confirmButton: 'btn-keep-swiping',
+              cancelButton: 'btn-keep-swiping',
             },
+            cancelButtonText: 'Keep swiping',
+            confirmButtonText: 'Keep swiping',
             buttonsStyling: false
           })
           swalWithCustomsButtons.fire({
-            title: "<h2>It's an arty match!</h2>",
+            title: "<h2><strong>It's an arty match!<strong></h2>",
             text: "We hope you will have a beautiful art story together",
             html:
-              'We hope you will have a beautiful art story together!' + '<hr>' +
-              `<a href="/artists/${data.artist_id}"><button class="button-welcome">Profile</button></a>` +
-              `<a href="/chatrooms/${data.chatroom_id}"><button class="button-welcome">Contact</button></a>`,
+              `We hope you will have a beautiful art story with <strong>${data.artist_name}</strong>!` + '<hr>' +
+              `<a href="/artists/${data.artist_id}"><button class="btn-next">Profile</button></a>` +
+              `<a href="/chatrooms/${data.chatroom_id}"><button class="btn-love-modal">Contact</button></a>`,
             // showCancelButton: true,
             // // confirmButtonColor: '#3085d6',
             // // cancelButtonColor: '#d33',

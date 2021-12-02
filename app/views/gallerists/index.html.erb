@@ -1,3 +1,30 @@
+<div class="container-fluid gallerists-index">
+  <div class="d-flex justify-content-between align-bottom page-title">
+    <h1 class="pt-4">My profile</h1>
+    <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+  </div>
+  <hr>
+
+  <div class="gallerists-info">
+      <% @gallerists.each do |gallerist| %>
+        <% gallerist.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+         <% end %>
+        <h4><%= gallerist.name  %> </h4>
+        <p><%= gallerist.address  %></p>
+        <p><%= gallerist.description %></p>
+        <p><% gallerist.photos.first %></p>
+        <br>  <br>   <br>
+        <%= link_to "Add an artwork" %>
+
+        <h1 class="pt-2">Gallery <br> Pictures</h1>
+        <hr>
+  </div>
+
+</div>
+
+
 <h1>My profile</h1>
 
 <div class="container">

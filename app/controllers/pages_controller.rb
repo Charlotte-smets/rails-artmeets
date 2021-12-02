@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @artists = current_user.artists
     @artworks = current_user.artworks
+    @gallerist = current_user.gallerists
   end
 
 end
