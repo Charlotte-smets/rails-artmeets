@@ -28,12 +28,18 @@ class GalleristsController < ApplicationController
     artist = artwork.artist
     artwork.liked_by @gallerist
     if artist.liked? @gallerist
-      # Problem with creation of a match between artist & gallerist
       @match = Match.new(artist_id: artist.id, gallerist_id: @gallerist.id)
-      @match.save
-      redirect_to match_path(@match)
+      respond_to do |format|
+        @match.save
+        chatroom = Chatroom.where(match_id: @match.id).first
+        # format.html { redirect_to match_path(@match) }
+        # format.text { render partial: 'shared/match.html' }
+        format.json { render json: { artwork_id: artwork.id, match: true, artist_id: artist.id, chatroom_id: chatroom.id } }
+      end
     else
-      redirect_to artworks_path
+      respond_to do |format|
+        format.json { render json: { artwork_id: artwork.id, match: false } }
+      end
     end
   end
 
@@ -42,7 +48,9 @@ class GalleristsController < ApplicationController
     @gallerist = Gallerist.find(params[:id])
     authorize @gallerist
     artwork.disliked_by @gallerist
-    redirect_to artworks_path
+    respond_to do |format|
+      format.json { render json: { artwork_id: artwork.id } }
+    end
   end
 
   private
@@ -50,8 +58,4 @@ class GalleristsController < ApplicationController
   def gallerist_params
     params.require(:gallerist).permit(:first_name, :last_name, :rating, :address, :description, :name, photos: [])
   end
-
-  # def match_params
-  #   params.require(:match)
-  # end
 end

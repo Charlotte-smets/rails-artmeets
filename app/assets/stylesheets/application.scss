@@ -8,6 +8,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'swiper/swiper-bundle';
 
 // Your CSS partials
 @import "components/index";
@@ -15,11 +16,23 @@
 
 
 // Titles and Paragraph designs
+
+body {
+  height: 100vh;
+}
 h1 {
 font-family: 'Ubuntu', sans-serif;
 font-weight: 600;
+// Charlotte update
 font-size: 33px;
+// master 02/12/21 12:20
+//font-size: 48px;
 }
+
+// master 02/12/21 12:20
+// h3 {
+  // font-size: 35px;
+// }
 
 h4 {
  font-family: 'Ubuntu', sans-serif;

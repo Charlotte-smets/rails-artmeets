@@ -1,10 +1,24 @@
 class ArtworksController < ApplicationController
   def index
-    @artworks = policy_scope(Artwork)
+    if params[:style] && params[:style].keys.present?
+      @artworks = []
+      params[:style].each_key do |style|
+        @artworks << policy_scope(Artwork).where(style: style)
+      end
+      @artworks.flatten!
+      # @artworks = Artwork.where(style: params[:query])
+    else
+      @artworks = policy_scope(Artwork)
+    end
     @gallerist = current_user.gallerists.first
-    artworks_filtered = @artworks.reject { |art| @gallerist.liked?(art) || @gallerist.disliked?(art) }
-    @artwork = artworks_filtered.sample
+    @artworks_filtered = @artworks.reject { |art| @gallerist.liked?(art) || @gallerist.disliked?(art) }
+    @artwork = @artworks_filtered.first
     # @artist = Artist.find(params[:artist_id])
+  end
+
+  def filter
+    @artwork = Artwork.new
+    authorize  @artwork
   end
 
   def new

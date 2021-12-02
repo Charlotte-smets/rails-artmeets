@@ -1,10 +1,14 @@
+
 <div class="container-fluid home-container" >
   <div class="home">
-        <h1>🔥 It's an arty match!🔥</h1>
-        <h4>We hope you will have a beautiful <br> art story together</p>
-        <%= link_to artist_path do %>
-        <button class="button-welcome">Contact <%= @match.artist.artist_name %> </button>
-        <% end %>
+    <h1>🔥 It's an arty match!🔥</h1>
+    <h4>We hope you will have a beautiful <br> art story together</h4>
+    <%= link_to artist_path(@match.artist) do %>
+      <button class="button-welcome">Visit <%= @match.artist.artist_name %>'s profile</button>
+    <% end %>
+    <%= link_to chatroom_path do %>
+      <button class="button-welcome">Contact <%= @match.artist.artist_name %></button>
+    <% end %>
   </div>
 </div>
 

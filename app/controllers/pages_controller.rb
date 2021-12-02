@@ -8,4 +8,5 @@ class PagesController < ApplicationController
     @artists = current_user.artists
     @artworks = current_user.artworks
   end
+
 end

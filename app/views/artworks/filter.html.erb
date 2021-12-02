@@ -1,0 +1,44 @@
+
+<div class="container">
+  <div  class= "header"><h1><strong>Search for<strong></h1></div>
+  <div class= "header-2"><h3>new talents</h3></div>
+
+  <%= form_tag artworks_path, method: :get do %>
+    <%#= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an art"
+    %>
+    <div class="add-filter">
+        <p class="font-weight-bold">Add filter</p>
+    </div>
+
+    <div class= "tag-item">
+      <div class="add-filter-2">
+        <p style="font-weight:lighter">Pick style that matches yours!</p>
+      </div>
+      <%["Sketch",
+          "Silkscreen on vinyl",
+          "Dark Painting",
+          "Pop art",
+          "Hard Edge Painting",
+          "Digital Dialogues",
+          "Sculptor",
+          "Screen Print on Paper",
+          "Lithographs and Silkscreen",
+          ].each do |style|%>
+          <%= check_box_tag "style[#{style}]", style, nil, id: style.downcase.gsub(" ", "_"), class: "tag-selector"%>
+          <%= label_tag style.downcase.gsub(" ", "_"), style%>
+        <%end%>
+        <div class="add-more"><p>+ Add more</p></div>
+        <%= submit_tag "Search", class: "btn btn-outline-dark" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <fieldset class="form-group check_boxes optional snippet_tags">
+    <legend class="col-form-label pt-0"></legend>
+    <input type="hidden" name="snippet[tag_ids][]" value="">
+  </fieldset>
+</div>
