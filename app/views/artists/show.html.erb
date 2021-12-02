@@ -4,16 +4,16 @@
     <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
 <hr>
-  
+
   <div class="show-info">
     <% @artist.photos.each do |photo| %>
-      <img class="artwork-img mb-5 " <%= cl_image_tag photo.key,  width: 320, crop: :fill %>
+      <%= cl_image_tag photo.key,  width: 320, crop: :fill, class:"artwork-img mb-5" %>
     <% end %>
     <h4><%= @artist.first_name %> <%= @artist.last_name %></h4>
     <p><%= @artist.artist_name %></p>
     <p><%= @artist.description %></p>
     <br>  <br>   <br>
-    <%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
+    <%#= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
 
     <h1 class="pt-2">Discover <br> My artworks</h1>
     <hr>
