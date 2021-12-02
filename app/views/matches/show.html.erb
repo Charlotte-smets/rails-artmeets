@@ -5,7 +5,7 @@
     <%= link_to artist_path(@match.artist) do %>
       <button class="button-welcome">Visit <%= @match.artist.artist_name %>'s profile</button>
     <% end %>
-    <%= link_to chatroom_path do %>
+    <%= link_to chatroom_path(@match.chatroom) do %>
       <button class="button-welcome">Contact <%= @match.artist.artist_name %></button>
     <% end %>
   </div>

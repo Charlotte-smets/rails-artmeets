@@ -1,6 +1,7 @@
 class Match < ApplicationRecord
   belongs_to :artist
   belongs_to :gallerist
+  has_one :chatroom
 
   after_create :create_chatroom
 
