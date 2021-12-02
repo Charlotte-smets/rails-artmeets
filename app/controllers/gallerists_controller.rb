@@ -34,7 +34,7 @@ class GalleristsController < ApplicationController
         chatroom = Chatroom.where(match_id: @match.id).first
         # format.html { redirect_to match_path(@match) }
         # format.text { render partial: 'shared/match.html' }
-        format.json { render json: { artwork_id: artwork.id, match: true, artist_id: artist.id, chatroom_id: chatroom.id } }
+        format.json { render json: { artwork_id: artwork.id, match: true, artist_id: artist.id, chatroom_id: chatroom.id, artist_name: artist.artist_name } }
       end
     else
       respond_to do |format|
