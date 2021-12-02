@@ -1,6 +1,9 @@
 <div class="container-fluid home-container" >
+  <img class="mt-5" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1638435114/am_ngwyy2.png" alt="Girl in a jacket" width="150" >
+
   <div class="home">
-        <h1>Welcome back Clement!</h1>
+
+        <h1>Welcome back <%= @current_user %>!</h1>
         <h4>Discover new talents everyday</p>
         <%= link_to artworks_path do %>
         <button class="button-welcome">Start now</button>

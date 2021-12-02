@@ -1,39 +1,29 @@
-<div class="container-fluid" id="artworks-index">
+<div class="container-fluid artworks-index">
   <div class="d-flex justify-content-between align-bottom page-title">
-  <h1><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
+  <h1 class="pt-4"><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
   <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
 <hr>
-<% @artist.photos.each do |photo| %>
-  <img class="artwork-img" <%= cl_image_tag photo.key,  width: 300, crop: :fill %>>
-<% end %>
 
-  <div class="artwork-info">
-  <h3><%= @artist.first_name %></h3>
-  <h4><%= @artist.last_name %></h4>
+
+  <div class="show-info">
+  <% @artist.photos.each do |photo| %>
+  <img class="artwork-img mb-5 " <%= cl_image_tag photo.key,  width: 320, crop: :fill %>
+  <% end %>
+  <h4><%= @artist.first_name %> <%= @artist.last_name %></h4>
   <p><%= @artist.artist_name %></p>
   <p><%= @artist.description %></p>
+  <br>  <br>   <br>
   <%= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
-  </div>
-  <br>
 
-</div>
-
-
-
-<div class="container-fluid" id="artworks-index">
-  <div class="d-flex justify-content-between align-bottom page-title">
-  <h1>Discover <br> My artworks</h1>
-  <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
-  </div>
-<hr>
-
-
-<div class="container">
+  <h1 class="pt-2">Discover <br> My artworks</h1>
+  <hr>
+    <div class="d-flex" id="gallery">
     <div class="artworks">
     <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
     <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
     <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
     <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844843/d_srskrb.jpg" width="150">
-    <div>
-</div>
+  <div>
+
+  </div>

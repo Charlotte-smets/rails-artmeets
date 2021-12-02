@@ -9,8 +9,8 @@
     <img class="artwork-img" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637844845/balloon-dog-limited-edition-jeff-koons-red-lifestyle-collectible-jeff-koons-smets-919035_600x_kfpwrd.jpg" alt="Girl in a jacket" width="300">
     <%# <%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="artwork-info">
-      <h3><%= @artwork.title %> </h3>
-      <h4><%= @artwork.artist.first_name %></h3>
+      <h3> <%= @artwork.title %> </h3>
+      <h4><%= @artwork.artist.first_name %></h4>
       <br>
       <p><%= @artwork.date %></p>
       <p><%= @artwork.style %></p>

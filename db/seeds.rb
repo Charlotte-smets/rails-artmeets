@@ -26,31 +26,31 @@ puts 'Done!'
 
 puts "Creating Artists..."
 artist1 = Artist.new(first_name: "Leonardo", last_name: "da Vinci", artist_name: "da Vinci", address: "Italy", description: "The original Renaissance Man")
-file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
+file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST3_qvhign.jpg')
 artist1.photos.attach(io: file, filename: 'artist1.png', content_type: 'img/png')
 artist1.user = mohammad
 artist1.save!
 
 artist2 = Artist.new(first_name: "Darryl", last_name: "McCray", artist_name: "Cornbread", address: "New York", description: "modern graffiti artist.")
-file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
+file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST4_x7fuc7.jpg')
 artist2.photos.attach(io: file, filename: 'artist2.png', content_type: 'img/png')
 artist2.user = charlotte
 artist2.save!
 
 artist3 = Artist.new(first_name: "Jean-luc", last_name: "Lacroix", artist_name: "Lacroix", address: "Paris", description: "keen sense for abstraction")
-file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
+file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST_tmrfof.jpg')
 artist3.photos.attach(io: file, filename: 'artist3.png', content_type: 'img/png')
 artist3.user = clement
 artist3.save!
 
 artist4 = Artist.new(first_name: "Pierre", last_name: "Dubreuil ", artist_name: "Dubreuil ", address: "Paris", description: "photographer")
-file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
+file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST2_iwqmzg.jpg')
 artist4.photos.attach(io: file, filename: 'artist4.png', content_type: 'img/png')
 artist4.user = mohammad
 artist4.save!
 
 artist5 = Artist.new(first_name: "John", last_name: "Hamon", artist_name: "Hamon", address: "Paris", description: "photographer")
-file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1637060480/jacqueline_hfxdpw.jpg')
+file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST1_c8atmq.jpg')
 artist5.photos.attach(io: file, filename: 'artist5.png', content_type: 'img/png')
 artist5.user = charlotte
 artist5.save!
