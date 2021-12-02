@@ -1,6 +1,11 @@
 <div class="container">
   <div  class= "header"><h1><strong>Search for<strong></h1></div>
   <div class= "header-2"><h3>new talents</h3></div>
+  <%# <div class="d-flex justify-content-between align-bottom page-title">
+    <h1 class="pt-4"> Search for <br> new talents</h1>
+    <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
+  </div>
+  <hr> %>
 
   <%= form_tag artworks_path, method: :get do %>
     <%#= text_field_tag :query,
@@ -9,12 +14,12 @@
       placeholder: "Find an art"
     %>
     <div class="add-filter">
-        <p class="font-weight-bold">Add filter</p>
+      <p class="font-weight-bold">Select your filters</p>
     </div>
 
     <div class= "tag-item">
       <div class="add-filter-2">
-        <p style="font-weight:lighter">Pick styles that matche yours!</p>
+        <p style="font-weight:lighter">Pick styles that match yours!</p>
       </div>
       <%["Sketch",
           "Silkscreen on vinyl",
@@ -29,7 +34,7 @@
           <%= check_box_tag "style[#{style}]", style, nil, id: style.downcase.gsub(" ", "_"), class: "tag-selector"%>
           <%= label_tag style.downcase.gsub(" ", "_"), style%>
         <%end%>
-        <div class="add-more"><p>+ Add more</p></div>
+        <div class="add-more"><p>+ See more</p></div>
 
         <%= submit_tag "Search", class: "btn btn-ghost" %>
 
