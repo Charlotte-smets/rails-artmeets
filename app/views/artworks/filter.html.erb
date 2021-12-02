@@ -14,7 +14,7 @@
 
     <div class= "tag-item">
       <div class="add-filter-2">
-        <p style="font-weight:lighter">Pick style that matches yours!</p>
+        <p style="font-weight:lighter">Pick styles that matche yours!</p>
       </div>
       <%["Sketch",
           "Silkscreen on vinyl",
@@ -30,7 +30,9 @@
           <%= label_tag style.downcase.gsub(" ", "_"), style%>
         <%end%>
         <div class="add-more"><p>+ Add more</p></div>
-        <%= submit_tag "Search", class: "btn btn-outline-dark" %>
+
+        <%= submit_tag "Search", class: "btn btn-ghost" %>
+
     </div>
   <% end %>
 </div>
