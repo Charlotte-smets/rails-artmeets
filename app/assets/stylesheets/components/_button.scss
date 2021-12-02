@@ -65,3 +65,17 @@ border-color: black;
 .btn {
 font-size: 27px;
 }
+
+.btn-success {
+color: black;
+background-color: white;
+border-color: #ced4da;
+margin-left: 86px;
+}
+
+.btn-success:not(:disabled):not(.disabled):hover,
+.btn-success:not(:disabled):not(.disabled):active {
+color: black;
+background-color: WHITE;
+border-color: #ced4da;
+}

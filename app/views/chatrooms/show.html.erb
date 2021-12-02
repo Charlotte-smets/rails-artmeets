@@ -10,7 +10,9 @@
   </div>
 
   <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-    <%= f.submit "submit" %>
+    <%= f.input :content, label: false, placeholder: "Start chatting with #{@chatroom.name}" %>
+    <button type="submit" class="btn btn-success btn-card-index-cart" title="Adicionar ao Carrinho">
+      <i class="far fa-paper-plane"></i>
+    </button>
   <% end %>
 </div>
