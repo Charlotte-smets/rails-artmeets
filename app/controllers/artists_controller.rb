@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @match = @artist.matches.where(gallerist_id: current_user.gallerists).first
     authorize @artist
     @artwork = Artwork.new
     authorize @artwork

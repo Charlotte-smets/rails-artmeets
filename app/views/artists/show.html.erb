@@ -1,10 +1,17 @@
 <div class="container-fluid artworks-index">
+  <% if @match %>
+    <%= link_to chatroom_path(@match.chatroom) do %>
+      <div class= "circle">
+        <i class="far fa-comment"></i>
+      </div>
+    <% end %>
+  <% end %>
   <div class="d-flex justify-content-between align-bottom page-title">
     <h1 class="pt-4"><%= @artist.first_name %> <br> <%= @artist.artist_name %></h1>
     <img class="arrow" src="https://res.cloudinary.com/charlotte-smets/image/upload/v1637834261/arrow_htgxnl.png" width="150">
   </div>
 <hr>
-  
+
   <div class="show-info">
     <% @artist.photos.each do |photo| %>
       <img class="artwork-img mb-5 " <%= cl_image_tag photo.key,  width: 320, crop: :fill %>
