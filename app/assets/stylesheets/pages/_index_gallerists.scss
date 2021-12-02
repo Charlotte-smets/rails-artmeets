@@ -1,0 +1,273 @@
+// Import page-specific CSS files here.
+@import "home";
+
+h1 {
+font-family: 'Ubuntu', sans-serif;
+font-weight: 600;
+font-size: 30px;
+}
+
+.gallerists-index{
+color: rgb(0, 0, 0);
+background: rgb(255, 255, 255);
+height: 100vh;
+text-align: center;
+height: -webkit-fill-available;
+  a {
+    text-decoration: none;
+  }
+}
+
+#artworks-index{
+  background-color: white;
+}
+
+// ENTETE PAGE - ARTWORK
+
+.page-title {
+  padding-top: 70px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: -20px;
+}
+
+.page-title h1{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+hr {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.arrow{
+  width: 25px;
+  height: 100%;
+  object-fit: cover;
+  padding-top: 35px;
+}
+
+
+// ARTWORK INFO
+
+// .artwork-img {
+//   margin-top: 20px;
+//   border-radius: 2em;
+//   border-color: black;
+//   border: 1px solid rgb(0, 0, 0);
+//   width: 300px;
+//   height: 350px;
+// }
+
+.artwork-card {
+  text-align: center;
+}
+
+.artwork-title {
+  text-align: center;
+}
+
+.artwork-style {
+  text-align: center;
+}
+
+.artwork-deck-card {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+
+  img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.gallerists-info{
+  padding-top: 50px;
+  // margin-left: 40px;
+  // padding-bottom: 5px;
+  text-align: center;
+  // Charlotte update
+  line-height: 0.4em;
+  // master 02/12/21 12:20
+  // line-height: 0.2em;
+  // background-color: white;
+  // border-radius: 2px;
+  // width: inherit;
+  // height: inherit;
+  // flex-grow: 1;
+  // margin-bottom: 40px;
+
+  .btn-love {
+    text-decoration: none;
+  }
+  .btn-next {
+    text-decoration: none;
+  }
+}
+
+.gallerists-info h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(68, 68, 68);
+}
+
+
+.gallerists-info h4 {
+  margin-top: -8px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+
+.gallerists-info p {
+  margin-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+ }
+
+ .gallerists-info a {
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: lowercase;
+  text-decoration: underline;
+ }
+
+
+ // ARTIST PORTFOLIO
+
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: 1em;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 576px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .artworks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+// ARTIST SHOW
+
+
+.show-info{
+  height: 100%;
+  background-color: white;
+  margin-top: 20px;
+  // margin-left: 40px;
+  padding-bottom: 5px;
+  text-align: center;
+  line-height: 0.4em;
+  .btn-love {
+    text-decoration: none;
+  }
+  .btn-next {
+    text-decoration: none;
+  }
+}
+
+.show-info h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+  text-align: left;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: -12px;
+}
+
+
+.show-info hr {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.show-info h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(68, 68, 68);
+}
+
+
+.show-info h4 {
+  margin-top: -8px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+
+.show-info p {
+  margin-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+ }
+
+ .show-info a {
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: lowercase;
+  text-decoration: underline;
+ }
+
+ #gallery{
+   background-color: white;
+   width: 100%;
+ }
