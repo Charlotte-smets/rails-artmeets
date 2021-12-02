@@ -22,31 +22,40 @@ clement = User.create(email: "clement@gmail.com", password: "123456")
 puts 'Done!'
 
 puts "Creating Artists..."
-
+# artist1 = Artist.new(first_name: "Leonardo", last_name: "da Vinci", artist_name: "da Vinci", address: "Italy", description: "The original Renaissance Man")
+# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST3_qvhign.jpg')
 artist1 = Artist.new(first_name: "Christopher", last_name: "Wool", artist_name: "Christopher Wool", address: "New York", description: "Post-conceptual.")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637927820/m6mhhrtyyip6s2fddcyx.jpg')
 artist1.photos.attach(io: file, filename: 'artist1.png', content_type: 'img/png')
 artist1.user = charlotte
 artist1.save!
 
+# artist2 = Artist.new(first_name: "Darryl", last_name: "McCray", artist_name: "Cornbread", address: "New York", description: "modern graffiti artist.")
+# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST4_x7fuc7.jpg')
 artist2 = Artist.new(first_name: "Barbara", last_name: "Kruger", artist_name: "Barbara Kruger", address: "Paris", description: "Art conceptuel, Art contemporain, Postmodern art")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637928465/cxpwkcifwx19m9jhnhpt.jpg')
 artist2.photos.attach(io: file, filename: 'artist2.png', content_type: 'img/png')
 artist2.user = clement
 artist2.save!
 
+# artist3 = Artist.new(first_name: "Jean-luc", last_name: "Lacroix", artist_name: "Lacroix", address: "Paris", description: "keen sense for abstraction")
+# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST_tmrfof.jpg')
 artist3 = Artist.new(first_name: "Takashi", last_name: "Murakami", artist_name: "Takashi Murakami", address: "Tokyo", description: "Superflat, Art contemporain, Pop art")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929226/usttwrdrloau1tp60hox.jpg')
 artist3.photos.attach(io: file, filename: 'artist3.png', content_type: 'img/png')
 artist3.user = mohammad
 artist3.save!
 
+# artist4 = Artist.new(first_name: "Pierre", last_name: "Dubreuil ", artist_name: "Dubreuil ", address: "Paris", description: "photographer")
+# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST2_iwqmzg.jpg')
 artist4 = Artist.new(first_name: "Peter", last_name: "Halley", artist_name: "Peter Halley", address: "New York", description: "Hard Edge Painting, Neo-conceptual art, Minimalisme.")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637925161/chu274sa816fdwjvtdxt.jpg')
 artist4.photos.attach(io: file, filename: 'artist4.png', content_type: 'img/png')
 artist4.user = charlotte
 artist4.save!
 
+# artist5 = Artist.new(first_name: "John", last_name: "Hamon", artist_name: "Hamon", address: "Paris", description: "photographer")
+# file = URI.open('https://res.cloudinary.com/charlotte-smets/image/upload/v1638437343/ARTIST1_c8atmq.jpg')
 artist5 = Artist.new(first_name: "Brian", last_name: "Donnelly", artist_name: "Kaws", address: "New York", description: "Sculptor, Painter, Designer")
 file = URI.open('https://res.cloudinary.com/ddnbumqwk/image/upload/v1637929696/c5rryhkdzqsunv8ovwjh.jpg')
 artist5.photos.attach(io: file, filename: 'artist5.png', content_type: 'img/png')
