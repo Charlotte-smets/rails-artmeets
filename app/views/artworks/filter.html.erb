@@ -21,14 +21,13 @@
       <div class="add-filter-2">
         <p style="font-weight:lighter">Pick styles that match yours!</p>
       </div>
-      <%["Painting",
-          "Drawing",
+      <%["Drawing","Painting",
+          "Graphic Design",
           "Photography",
-          "Digital Art",
           "Sculpture",
           "Cartoon",
           "Graffiti",
-          "Graphic Design",
+          "Digital Art",
           "Engraving",
           ].each do |style|%>
           <%= check_box_tag "style[#{style}]", style, nil, id: style.downcase.gsub(" ", "_"), class: "tag-selector"%>

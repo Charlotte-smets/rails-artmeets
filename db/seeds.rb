@@ -109,6 +109,13 @@ artwork1.photo.attach(io: file, filename: 'artwork-lrx.png', content_type: 'img/
 artwork1.artist = artist1
 artwork1.save!
 
+# artist 7 = Hibouch
+artwork8 = Artwork.new(title: "Surfing", style: "Drawing")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-drawing_hibouch_jdktgp.jpg')
+artwork8.photo.attach(io: file, filename: 'artwork-hibouch.png', content_type: 'img/png')
+artwork8.artist = artist7
+artwork8.save!
+
 # artist2 = itsallinsideus
 artwork2 = Artwork.new(title: "copie", style: "Painting")
 file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-painting-itsallinsideus_zjxb7x.jpg')
@@ -123,12 +130,6 @@ artwork3.photo.attach(io: file, filename: 'artwork-quasar.png', content_type: 'i
 artwork3.artist = artist4
 artwork3.save!
 
-# artist 8 = Cookie-illustration
-artwork4 = Artwork.new(title: "Bodypositive", style: "Digital Art")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets_cookie-illustrations-digital-arts-1_mtcxqg.jpg')
-artwork4.photo.attach(io: file, filename: 'artwork-cookie-illustrations.png', content_type: 'img/png')
-artwork4.artist = artist8
-artwork4.save!
 
 # artist 3 = Cole's Color
 artwork5 = Artwork.new(title: "Geometry", style: "Painting")
@@ -138,25 +139,19 @@ artwork5.artist = artist3
 artwork5.save!
 
 # artist 5 = Paval
-artwork6 = Artwork.new(title: "Exhibition", style: "Digital Art")
+artwork6 = Artwork.new(title: "Exhibition", style: "Graphic Design")
 file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-digital-art_valentinpavageau_irz1fc.jpg')
 artwork6.photo.attach(io: file, filename: 'artwork-paval.png', content_type: 'img/png')
 artwork6.artist = artist5
 artwork6.save!
 
 # artist 6 = Vivizama
-artwork7 = Artwork.new(title: "Demon Slayer, Infinity Train Fanar", style: "Drawing")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing_vivizama-2_dnmtkr.jpg')
-artwork7.photo.attach(io: file, filename: 'artwork-vivizama.png', content_type: 'img/png')
-artwork7.artist = artist6
-artwork7.save!
+# artwork7 = Artwork.new(title: "Demon Slayer, Infinity Train Fanar", style: "Drawing")
+# file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing_vivizama-2_dnmtkr.jpg')
+# artwork7.photo.attach(io: file, filename: 'artwork-vivizama.png', content_type: 'img/png')
+# artwork7.artist = artist6
+# artwork7.save!
 
-# artist 7 = Hibouch
-artwork8 = Artwork.new(title: "Surfing", style: "Drawing")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-drawing_hibouch_jdktgp.jpg')
-artwork8.photo.attach(io: file, filename: 'artwork-hibouch.png', content_type: 'img/png')
-artwork8.artist = artist7
-artwork8.save!
 
 # artist 9 = weirdsetups
 artwork9 = Artwork.new(title: "Morning Coffee", style: "Photography")
@@ -166,11 +161,25 @@ artwork9.artist = artist9
 artwork9.save!
 
 # artist 10 = Mr.Ghostbelette
-artwork10 = Artwork.new(title: "Sorry no Ghost", style: "Digital Art")
+artwork10 = Artwork.new(title: "Sorry no Ghost", style: "Graphic Design")
 file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_digital-arts-2_tpz8lx.jpg')
 artwork10.photo.attach(io: file, filename: 'artwork1-mrghosbelette.png', content_type: 'img/png')
 artwork10.artist = artist10
 artwork10.save!
+
+# artist 8 = Cookie-illustration
+artwork4 = Artwork.new(title: "Bodypositive", style: "Graphic Design")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets_cookie-illustrations-digital-arts-1_mtcxqg.jpg')
+artwork4.photo.attach(io: file, filename: 'artwork-cookie-illustrations.png', content_type: 'img/png')
+artwork4.artist = artist8
+artwork4.save!
+
+# artist 10 = Mr.Ghostbelette
+artwork13 = Artwork.new(title: "Ghost player", style: "Graphic Design")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_digital-arts-3_dx6fy0.jpg')
+artwork13.photo.attach(io: file, filename: 'artwork4-mrghostbelette.png', content_type: 'img/png')
+artwork13.artist = artist10
+artwork13.save!
 
 # artist 10 = Mr.Ghostbelette
 artwork11 = Artwork.new(title: "Ghost Note", style: "Painting")
@@ -180,20 +189,6 @@ artwork11.artist = artist10
 artwork11.save!
 
 # artist 10 = Mr.Ghostbelette
-artwork12 = Artwork.new(title: "It's skateday", style: "Photography")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-photo-mrghostbellette_iwntid.jpg')
-artwork12.photo.attach(io: file, filename: 'artwork3-mrghostbelette.png', content_type: 'img/png')
-artwork12.artist = artist10
-artwork12.save!
-
-# artist 10 = Mr.Ghostbelette
-artwork13 = Artwork.new(title: "Ghost player", style: "Digital Art")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481644/production/artmeets_digital-arts-3_dx6fy0.jpg')
-artwork13.photo.attach(io: file, filename: 'artwork4-mrghostbelette.png', content_type: 'img/png')
-artwork13.artist = artist10
-artwork13.save!
-
-# artist 10 = Mr.Ghostbelette
 artwork14 = Artwork.new(title: "Ghost car", style: "Painting")
 file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-painting-mrghostbellette_wvwzbp.jpg')
 artwork14.photo.attach(io: file, filename: 'artwork5-mrghostbelette.png', content_type: 'img/png')
@@ -201,9 +196,16 @@ artwork14.artist = artist10
 artwork14.save!
 
 # artist 10 = Mr.Ghostbelette
-artwork15 = Artwork.new(title: "Ghost Madzine", style: "Drawing")
-file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing-mrghostbellette_pkj6l1.jpg')
-artwork15.photo.attach(io: file, filename: 'artwork6-mrghostbelette.png', content_type: 'img/png')
-artwork15.artist = artist10
-artwork15.save!
+artwork12 = Artwork.new(title: "It's skateday", style: "Photography")
+file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-photo-mrghostbellette_iwntid.jpg')
+artwork12.photo.attach(io: file, filename: 'artwork3-mrghostbelette.png', content_type: 'img/png')
+artwork12.artist = artist10
+artwork12.save!
+
+# artist 10 = Mr.Ghostbelette
+# artwork15 = Artwork.new(title: "Ghost Madzine", style: "Drawing")
+# file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481642/production/artmeets-drawing-mrghostbellette_pkj6l1.jpg')
+# artwork15.photo.attach(io: file, filename: 'artwork6-mrghostbelette.png', content_type: 'img/png')
+# artwork15.artist = artist10
+# artwork15.save!
 puts "Artworks Created!"
