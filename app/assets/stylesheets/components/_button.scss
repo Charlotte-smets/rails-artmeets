@@ -36,9 +36,9 @@
 }
 
 .btn-love-modal {
-  color: black;
+  color: white;
   border: 1px solid black;
-  background-color: white;
+  background-color: black;
   padding: 8px 24px;
   border-radius: 2em;
   font-weight: lighter;
@@ -55,6 +55,17 @@
   color: black;
   border: 1px solid black;
   background-color: white;
+  padding: 8px 24px;
+  border-radius: 2em;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-next-modal {
+  color: white;
+  border: 1px solid black;
+  background-color: black;
   padding: 8px 24px;
   border-radius: 2em;
   font-weight: lighter;
