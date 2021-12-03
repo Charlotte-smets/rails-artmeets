@@ -10,9 +10,9 @@ font-size: 30px;
 .artworks-index{
 color: rgb(0, 0, 0);
 background: rgb(255, 255, 255);
-height: 100vh;
+// height: 100vh;
 text-align: center;
-height: -webkit-fill-available;
+// height: -webkit-fill-available;
   a {
     text-decoration: none;
   }
@@ -64,6 +64,7 @@ hr {
 .artwork-card {
   text-align: center;
   padding-bottom: 30px;
+  background-color: white;
 }
 
 .artwork-title {
