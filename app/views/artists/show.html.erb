@@ -1,7 +1,7 @@
 <div class="container-fluid artworks-index">
   <% if @match %>
     <%= link_to chatroom_path(@match.chatroom) do %>
-      <div class= "circle">
+      <div class= "btn-circle">
         <i class="far fa-comment"></i>
       </div>
     <% end %>
@@ -17,9 +17,9 @@
     <% @artist.photos.each do |photo| %>
       <%= cl_image_tag photo.key,  width: 320, crop: :fill, class:"artwork-img mb-4" %>
     <% end %>
-    <h4><%= @artist.first_name %> <%= @artist.last_name %></h4>
-    <p><%= @artist.artist_name %></p>
-    <p><%= @artist.description %></p>
+    <h4><%= @artist.artist_name %></h4>
+    <p><%= @artist.first_name %> <%= @artist.last_name %></p>
+    <p class="description"><%= @artist.description %></p>
     <br>  <br>   <br>
     <%#= link_to "Add an artwork", new_artist_artwork_path(@artist) %>
   <div class="container-fluid" id="artworks-index">
@@ -33,8 +33,8 @@
   <% @artist.artworks.each do |artwork| %>
     <div class="artwork-card">
       <%= cl_image_tag artwork.photo.key,  width: 300, class: "artwork-img" %>
-      <p class="artwork-title"><%= artwork.title %></p>
-      <p class="artwork-style"><%= artwork.style %></p>
+      <p class="artwork-title"><strong><%= artwork.title %></strong></p>
+      <p class="artwork-style"><em><%= artwork.style %></em></p>
     </div>
   <% end %>
 </div>

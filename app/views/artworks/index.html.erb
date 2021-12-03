@@ -17,10 +17,9 @@
             <%= cl_image_tag artwork.photo.key %>
             <div class="artwork-info">
               <h4><%= artwork.title %> </h4>
-              <h4><%= artwork.artist.artist_name %></h4>
               <br>
               <h3><%= artwork.date %></h3>
-              <h3><%= artwork.style %></h3>
+              <h3><em><%= artwork.style %></em></h3>
               <h3><%= artwork.artist.artist_name %></h3>
             </div>
           </div>
