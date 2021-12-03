@@ -130,7 +130,6 @@ artwork3.photo.attach(io: file, filename: 'artwork-quasar.png', content_type: 'i
 artwork3.artist = artist4
 artwork3.save!
 
-
 # artist 3 = Cole's Color
 artwork5 = Artwork.new(title: "Geometry", style: "Painting")
 file = URI.open('https://res.cloudinary.com/clemi04/image/upload/v1638481643/production/artmeets-painting_colescolor_fsxlls.jpg')
@@ -151,7 +150,6 @@ artwork6.save!
 # artwork7.photo.attach(io: file, filename: 'artwork-vivizama.png', content_type: 'img/png')
 # artwork7.artist = artist6
 # artwork7.save!
-
 
 # artist 9 = weirdsetups
 artwork9 = Artwork.new(title: "Morning Coffee", style: "Photography")
