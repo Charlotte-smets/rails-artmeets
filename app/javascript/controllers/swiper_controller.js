@@ -16,9 +16,7 @@ export default class extends Controller {
     });
 
     swiper.on('slideNextTransitionStart', function () {
-      // console.log("slide is disliked");
       // const btnDislike = document.querySelector('.btn-next');
-      // console.log(btnDislike);
       // btnDislike.style.backgroundColor = 'red';
       const urlDislike = `/gallerists/${swiper.slides[swiper.previousIndex].dataset.galleristId}/dislike?artwork=${swiper.slides[swiper.previousIndex].dataset.artworkId}`
       fetch(urlDislike, {
@@ -39,16 +37,13 @@ export default class extends Controller {
     // });
 
     swiper.on('slidePrevTransitionStart', function () {
-      // console.log('slide is liked');
       const urlLike = swiper.slides[swiper.previousIndex].dataset.swiperUrlValue;
-      // console.log(urlLike);
       fetch(urlLike, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'X-CSRF-Token': csrfToken() },
       })
       .then(response => response.json())
       .then((data) => {
-        // console.log(data);
         // document.querySelector(`[data-artwork-id="${data.artwork_id}"]`).remove()
         const match = data.match;
         if (match === true) {
@@ -68,11 +63,6 @@ export default class extends Controller {
               `We hope you will have a beautiful art story with <strong>${data.artist_name}</strong>!` + '<hr>' +
               `<a href="/artists/${data.artist_id}"><button class="btn-next-modal">Profile</button></a>` +
               `<a href="/chatrooms/${data.chatroom_id}"><button class="btn-love-modal">Contact</button></a>`,
-            // showCancelButton: true,
-            // // confirmButtonColor: '#3085d6',
-            // // cancelButtonColor: '#d33',
-            // confirmButtonText: 'Profile',
-            // cancelButtonText: 'Contact',
             backdrop: `rgba(0,0,0,0.4)`
           })
           swiper.removeSlide(swiper.activeIndex);
