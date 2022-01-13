@@ -2,13 +2,13 @@
   font-size:16px;
 }
 
-$th_pink:#ffffff;
+$th_white:#ffffff;
 $th_dark:#000000;
 
 
 header {
   nav {
-    background-color: black;
+    background-color: $th_dark;
     position:fixed;
     top:0;
     left:0;
@@ -36,7 +36,6 @@ header {
         opacity:0;
         text-decoration: none;
 
-
         a {
           display:block;
           font-size:35px;
@@ -44,19 +43,18 @@ header {
           font-family: 'Ubuntu', sans-serif;
           text-decoration:none;
           text-align:center;
-          color:#fff;
+          color: $th_white;
           transition:all 0.2s ease-in-out;
           margin-top: 60px;
 
           i {
-            color: white;
+            color: $th_white;
           }
 
           &:hover {
-            color:$th_pink;
+            color: $th_white;
             text-decoration: none;
-            font-size: 22px;
-
+            font-size: 40px;
           }
         }
       }
@@ -74,12 +72,11 @@ header {
   margin-right: 6px;
   margin-top: 6px;
 
-
   .bar {
     width: 30px;
     height: 2px;
     margin: 7px auto;
-    background-color:rgb(87, 87, 87);
+    background-color: $th_white;
     transition: all 0.3s ease-in-out;
 
     &:nth-child(2) {
@@ -93,7 +90,6 @@ header {
     opacity: 1;
     visibility: visible;
     background-color: rgb(0, 0, 0);
-
 
     ul {
       top: 70px;
@@ -114,19 +110,21 @@ header {
 
   &+label.toggle-btn {
     .bar {
-      background-color:rgb(255, 255, 255);
+      background-color: $th_white;
 
       &:nth-child(2) {
-        transform:translateX(50px);
-        opacity:0;
+        // transform:translateX(50px);
+        opacity: 0;
       }
 
       &:nth-child(1) {
-        transform:translateY(10px) rotate(45deg);
+        transform: translateY(10px) rotate(45deg);
+        // transform: rotate(45deg) translate(5px, 5px);
       }
 
       &:nth-child(3) {
-        transform:translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+        // transform: rotate(-45deg) translate(7px, -6px);
       }
     }
   }
