@@ -4,6 +4,7 @@
 
 $th_white:#ffffff;
 $th_dark:#000000;
+$th_grey: rgb(87, 87, 87);
 
 
 header {
@@ -76,7 +77,7 @@ header {
     width: 30px;
     height: 2px;
     margin: 7px auto;
-    background-color: $th_white;
+    background-color: $th_grey;
     transition: all 0.3s ease-in-out;
 
     &:nth-child(2) {
@@ -119,13 +120,42 @@ header {
 
       &:nth-child(1) {
         transform: translateY(10px) rotate(45deg);
-        // transform: rotate(45deg) translate(5px, 5px);
       }
 
       &:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        // transform: rotate(-45deg) translate(7px, -6px);
       }
+    }
+  }
+}
+
+.toggle-btn-cross {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  right: 10px;
+  top: 2px;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-top: 6px;
+
+  .bar {
+    width: 30px;
+    height: 2px;
+    margin: 7px auto;
+    background-color: $th_grey;
+    transition: all 0.3s ease-in-out;
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
   }
 }
