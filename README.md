@@ -1,6 +1,6 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-Artmeets is a Progressive Web Application, generated with the framework Ruby on Rails (Languages used: Ruby, HTML5, SCSS and Javascript). It was made by three students from Le Wagon : Charlotte Smets, Mohammad Ewaz and Clément Azalbert.
+Artmeets is a Progressive Web Application, made with the framework Ruby on Rails (languages used: Ruby, HTML5, SCSS and Javascript). It was made by three students from Le Wagon : Charlotte Smets, Mohammad Ewaz and Clément Azalbert.
 
 You can watch the demo of the application by clicking on the following link: https://www.youtube.com/watch?v=IuGxlx1muNo&t=4457s
 
@@ -15,4 +15,5 @@ If both a gallerist and a artist liked each other, it creates a match between th
 If you want to test this application, we advise you to test it on a smartphone. Indeed, this project being a progressive web app, it has been adapted only for smartphones due to the time constraints.
 
 You can click on the following link to see the live application: http://www.artmeets.fun/
+
 If you have an error with the link above, please use this one: https://artmeets.herokuapp.com/
