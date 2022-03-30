@@ -83,16 +83,6 @@
   border-color: #000;
 }
 
-
-.btn {
-  font-size: 27px;
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 .btn-success {
   color: black;
   background-color: white;
@@ -118,6 +108,21 @@
   background-color: white;
   border: 1px solid black;
 }
+
+.btn.btn-ghost {
+  color: black;
+  font-size: 27px;
+  border: 1px solid black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: small;
+  width: 318px;
+}
+
+.btn.btn-ghost:hover {
+  opacity: 1;
+}
+
 
 .btn-ghost {
   color: black;
